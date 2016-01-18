@@ -1,0 +1,16 @@
+C:\Users\Thomas Finlay\Documents\GitHub\ForgeServerInstaller\Forge Server Installer\Forge Server Installer\bin\Debug\Forge Server Installer.exe.config
+C:\Users\Thomas Finlay\Documents\GitHub\ForgeServerInstaller\Forge Server Installer\Forge Server Installer\bin\Debug\Forge Server Installer.exe
+C:\Users\Thomas Finlay\Documents\GitHub\ForgeServerInstaller\Forge Server Installer\Forge Server Installer\bin\Debug\Forge Server Installer.pdb
+C:\Users\Thomas Finlay\Documents\GitHub\ForgeServerInstaller\Forge Server Installer\Forge Server Installer\bin\Debug\Forge Server Installer.xml
+C:\Users\Thomas Finlay\Documents\GitHub\ForgeServerInstaller\Forge Server Installer\Forge Server Installer\obj\Debug\Forge_Server_Installer.Form1.resources
+C:\Users\Thomas Finlay\Documents\GitHub\ForgeServerInstaller\Forge Server Installer\Forge Server Installer\obj\Debug\Forge_Server_Installer.Resources.resources
+C:\Users\Thomas Finlay\Documents\GitHub\ForgeServerInstaller\Forge Server Installer\Forge Server Installer\obj\Debug\Forge Server Installer.vbproj.GenerateResource.Cache
+C:\Users\Thomas Finlay\Documents\GitHub\ForgeServerInstaller\Forge Server Installer\Forge Server Installer\obj\Debug\Forge Server Installer.exe
+C:\Users\Thomas Finlay\Documents\GitHub\ForgeServerInstaller\Forge Server Installer\Forge Server Installer\obj\Debug\Forge Server Installer.xml
+C:\Users\Thomas Finlay\Documents\GitHub\ForgeServerInstaller\Forge Server Installer\Forge Server Installer\obj\Debug\Forge Server Installer.pdb
+C:\Users\Thomas Finlay\Documents\GitHub\ForgeServerInstaller\Forge Server Installer\Forge Server Installer\obj\Debug\Forge_Server_Installer.Form2.resources
+C:\Users\Thomas Finlay\Documents\GitHub\ForgeServerInstaller\Forge Server Installer\Forge Server Installer\obj\Debug\Forge_Server_Installer.LoginForm1.resources
+C:\Users\Thomas Finlay\Documents\GitHub\ForgeServerInstaller\Forge Server Installer\Forge Server Installer\obj\Debug\Forge_Server_Installer.SplashScreen1.resources
+C:\Users\Thomas Finlay\Documents\GitHub\ForgeServerInstaller\Forge Server Installer\Forge Server Installer\obj\Debug\Forge Server Installer.vbprojResolveAssemblyReference.cache
+C:\Users\Thomas Finlay\Documents\GitHub\ForgeServerInstaller\Forge Server Installer\Forge Server Installer\obj\Debug\Forge_Server_Installer.done.resources
+C:\Users\Thomas Finlay\Documents\GitHub\ForgeServerInstaller\Forge Server Installer\Forge Server Installer\obj\Debug\Forge_Server_Installer.spigot.resources
