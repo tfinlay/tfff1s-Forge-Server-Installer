@@ -36,7 +36,7 @@ Partial Class done
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(867, 89)
         Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Launch Now!"
+        Me.Button1.Text = "Begin"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'Label1

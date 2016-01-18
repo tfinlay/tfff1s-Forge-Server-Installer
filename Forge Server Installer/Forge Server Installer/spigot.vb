@@ -264,7 +264,7 @@ Installing:
                     Dim client As WebClient = New WebClient
                     AddHandler client.DownloadProgressChanged, AddressOf client_ProgressChanged
                     AddHandler client.DownloadFileCompleted, AddressOf client_DownloadCompleted
-                    client.DownloadFileAsync(New Uri("http://getspigot.org/spigot18/spigot_server.jar"), path + "spigot_server.jar")
+                    client.DownloadFileAsync(New Uri("http://getspigot.org/spigot18/spigot_server.jar"), path + "\spigot_server.jar")
 
 
 

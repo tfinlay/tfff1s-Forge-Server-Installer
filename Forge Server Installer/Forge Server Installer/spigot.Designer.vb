@@ -741,11 +741,11 @@ Partial Class spigot
         Me.bukkitgui.AutoSize = True
         Me.bukkitgui.Checked = True
         Me.bukkitgui.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.bukkitgui.Location = New System.Drawing.Point(477, 381)
+        Me.bukkitgui.Location = New System.Drawing.Point(428, 381)
         Me.bukkitgui.Name = "bukkitgui"
-        Me.bukkitgui.Size = New System.Drawing.Size(84, 17)
+        Me.bukkitgui.Size = New System.Drawing.Size(170, 17)
         Me.bukkitgui.TabIndex = 117
-        Me.bukkitgui.Text = "Bukkit Gui 2"
+        Me.bukkitgui.Text = "Bukkit Gui 2 - Additional Setup"
         Me.ToolTip1.SetToolTip(Me.bukkitgui, "A fancy GUI for your server." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "NOTE: Requires some setup")
         Me.bukkitgui.UseVisualStyleBackColor = True
         '
@@ -777,7 +777,7 @@ Partial Class spigot
         '
         Me.clearlagg.AutoSize = True
         Me.clearlagg.Enabled = False
-        Me.clearlagg.Location = New System.Drawing.Point(477, 404)
+        Me.clearlagg.Location = New System.Drawing.Point(428, 404)
         Me.clearlagg.Name = "clearlagg"
         Me.clearlagg.Size = New System.Drawing.Size(74, 17)
         Me.clearlagg.TabIndex = 120

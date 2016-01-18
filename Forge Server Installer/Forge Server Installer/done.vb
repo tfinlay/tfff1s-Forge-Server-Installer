@@ -1,9 +1,7 @@
-﻿Public Class done
+﻿Imports System.IO
+Public Class done
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        If My.Computer.FileSystem.FileExists(My.Settings.installdirectory + "\start.cmd") Then
-            Process.Start(My.Settings.installdirectory + "\start.cmd")
-        Else
-            MsgBox("Failed to find start.cmd. There is something wrong...")
-        End If
+        MsgBox("Double Click on start.cmd to start your Server")
+        Process.Start(My.Settings.installdirectory)
     End Sub
 End Class
