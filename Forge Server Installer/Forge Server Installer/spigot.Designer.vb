@@ -29,7 +29,7 @@ Partial Class spigot
         Me.Adventure = New System.Windows.Forms.RadioButton()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.v172 = New System.Windows.Forms.RadioButton()
+        Me.v175 = New System.Windows.Forms.RadioButton()
         Me.v18 = New System.Windows.Forms.RadioButton()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Rammb = New System.Windows.Forms.NumericUpDown()
@@ -96,6 +96,8 @@ Partial Class spigot
         Me.clearlagg = New System.Windows.Forms.CheckBox()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.Button5 = New System.Windows.Forms.Button()
+        Me.v179 = New System.Windows.Forms.RadioButton()
+        Me.v1710 = New System.Windows.Forms.RadioButton()
         Me.GroupBox2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Rammb, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -139,8 +141,10 @@ Partial Class spigot
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.v1710)
+        Me.GroupBox2.Controls.Add(Me.v179)
         Me.GroupBox2.Controls.Add(Me.PictureBox1)
-        Me.GroupBox2.Controls.Add(Me.v172)
+        Me.GroupBox2.Controls.Add(Me.v175)
         Me.GroupBox2.Controls.Add(Me.v18)
         Me.GroupBox2.Location = New System.Drawing.Point(29, 22)
         Me.GroupBox2.Name = "GroupBox2"
@@ -158,26 +162,26 @@ Partial Class spigot
         Me.PictureBox1.TabIndex = 121
         Me.PictureBox1.TabStop = False
         '
-        'v172
+        'v175
         '
-        Me.v172.AutoSize = True
-        Me.v172.Location = New System.Drawing.Point(338, 30)
-        Me.v172.Name = "v172"
-        Me.v172.Size = New System.Drawing.Size(49, 17)
-        Me.v172.TabIndex = 2
-        Me.v172.Text = "1.7.2"
-        Me.v172.UseVisualStyleBackColor = True
+        Me.v175.AutoSize = True
+        Me.v175.Location = New System.Drawing.Point(352, 31)
+        Me.v175.Name = "v175"
+        Me.v175.Size = New System.Drawing.Size(49, 17)
+        Me.v175.TabIndex = 2
+        Me.v175.Text = "1.7.5"
+        Me.v175.UseVisualStyleBackColor = True
         '
         'v18
         '
         Me.v18.AutoSize = True
         Me.v18.Checked = True
-        Me.v18.Location = New System.Drawing.Point(194, 30)
+        Me.v18.Location = New System.Drawing.Point(155, 31)
         Me.v18.Name = "v18"
-        Me.v18.Size = New System.Drawing.Size(40, 17)
+        Me.v18.Size = New System.Drawing.Size(49, 17)
         Me.v18.TabIndex = 0
         Me.v18.TabStop = True
-        Me.v18.Text = "1.8"
+        Me.v18.Text = "1.8.8"
         Me.v18.UseVisualStyleBackColor = True
         '
         'Label13
@@ -794,6 +798,28 @@ Partial Class spigot
         Me.Button5.Text = "< Back"
         Me.Button5.UseVisualStyleBackColor = True
         '
+        'v179
+        '
+        Me.v179.AutoSize = True
+        Me.v179.Location = New System.Drawing.Point(469, 31)
+        Me.v179.Name = "v179"
+        Me.v179.Size = New System.Drawing.Size(49, 17)
+        Me.v179.TabIndex = 122
+        Me.v179.TabStop = True
+        Me.v179.Text = "1.7.9"
+        Me.v179.UseVisualStyleBackColor = True
+        '
+        'v1710
+        '
+        Me.v1710.AutoSize = True
+        Me.v1710.Location = New System.Drawing.Point(239, 31)
+        Me.v1710.Name = "v1710"
+        Me.v1710.Size = New System.Drawing.Size(55, 17)
+        Me.v1710.TabIndex = 123
+        Me.v1710.TabStop = True
+        Me.v1710.Text = "1.7.10"
+        Me.v1710.UseVisualStyleBackColor = True
+        '
         'spigot
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -884,7 +910,7 @@ Partial Class spigot
     Friend WithEvents Survival As RadioButton
     Friend WithEvents Adventure As RadioButton
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents v172 As RadioButton
+    Friend WithEvents v175 As RadioButton
     Friend WithEvents v18 As RadioButton
     Friend WithEvents Label13 As Label
     Friend WithEvents Rammb As NumericUpDown
@@ -952,4 +978,6 @@ Partial Class spigot
     Friend WithEvents ToolTip1 As ToolTip
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Button5 As Button
+    Friend WithEvents v1710 As RadioButton
+    Friend WithEvents v179 As RadioButton
 End Class

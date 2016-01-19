@@ -79,21 +79,22 @@ Partial Class Form2
         Me.Rammb = New System.Windows.Forms.NumericUpDown()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.RadioButton9 = New System.Windows.Forms.RadioButton()
         Me.RadioButton7 = New System.Windows.Forms.RadioButton()
         Me.RadioButton6 = New System.Windows.Forms.RadioButton()
         Me.RadioButton5 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton4 = New System.Windows.Forms.RadioButton()
+        Me.v188 = New System.Windows.Forms.RadioButton()
         Me.RadioButton3 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
+        Me.v1710 = New System.Windows.Forms.RadioButton()
         Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Label14 = New System.Windows.Forms.Label()
         Me.pathtext2 = New System.Windows.Forms.TextBox()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.FolderBrowserDialog2 = New System.Windows.Forms.FolderBrowserDialog()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Button5 = New System.Windows.Forms.Button()
+        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         CType(Me.MaxPlayers, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.viewdistance, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.oppermlevel, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -635,15 +636,25 @@ Partial Class Form2
         Me.GroupBox2.Controls.Add(Me.RadioButton7)
         Me.GroupBox2.Controls.Add(Me.RadioButton6)
         Me.GroupBox2.Controls.Add(Me.RadioButton5)
-        Me.GroupBox2.Controls.Add(Me.RadioButton4)
+        Me.GroupBox2.Controls.Add(Me.v188)
         Me.GroupBox2.Controls.Add(Me.RadioButton3)
-        Me.GroupBox2.Controls.Add(Me.RadioButton2)
+        Me.GroupBox2.Controls.Add(Me.v1710)
         Me.GroupBox2.Controls.Add(Me.RadioButton1)
         Me.GroupBox2.Location = New System.Drawing.Point(12, 28)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(586, 71)
         Me.GroupBox2.TabIndex = 56
         Me.GroupBox2.TabStop = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.PictureBox1.Location = New System.Drawing.Point(1, 4)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(146, 67)
+        Me.PictureBox1.TabIndex = 9
+        Me.PictureBox1.TabStop = False
         '
         'RadioButton9
         '
@@ -689,16 +700,15 @@ Partial Class Form2
         Me.RadioButton5.Text = "1.6.4"
         Me.RadioButton5.UseVisualStyleBackColor = True
         '
-        'RadioButton4
+        'v188
         '
-        Me.RadioButton4.AutoSize = True
-        Me.RadioButton4.Enabled = False
-        Me.RadioButton4.Location = New System.Drawing.Point(172, 19)
-        Me.RadioButton4.Name = "RadioButton4"
-        Me.RadioButton4.Size = New System.Drawing.Size(49, 17)
-        Me.RadioButton4.TabIndex = 3
-        Me.RadioButton4.Text = "1.8.8"
-        Me.RadioButton4.UseVisualStyleBackColor = True
+        Me.v188.AutoSize = True
+        Me.v188.Location = New System.Drawing.Point(172, 19)
+        Me.v188.Name = "v188"
+        Me.v188.Size = New System.Drawing.Size(49, 17)
+        Me.v188.TabIndex = 3
+        Me.v188.Text = "1.8.8"
+        Me.v188.UseVisualStyleBackColor = True
         '
         'RadioButton3
         '
@@ -711,17 +721,17 @@ Partial Class Form2
         Me.RadioButton3.Text = "1.7.2"
         Me.RadioButton3.UseVisualStyleBackColor = True
         '
-        'RadioButton2
+        'v1710
         '
-        Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Checked = True
-        Me.RadioButton2.Location = New System.Drawing.Point(236, 19)
-        Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(55, 17)
-        Me.RadioButton2.TabIndex = 1
-        Me.RadioButton2.TabStop = True
-        Me.RadioButton2.Text = "1.7.10"
-        Me.RadioButton2.UseVisualStyleBackColor = True
+        Me.v1710.AutoSize = True
+        Me.v1710.Checked = True
+        Me.v1710.Location = New System.Drawing.Point(236, 19)
+        Me.v1710.Name = "v1710"
+        Me.v1710.Size = New System.Drawing.Size(55, 17)
+        Me.v1710.TabIndex = 1
+        Me.v1710.TabStop = True
+        Me.v1710.Text = "1.7.10"
+        Me.v1710.UseVisualStyleBackColor = True
         '
         'RadioButton1
         '
@@ -765,16 +775,6 @@ Partial Class Form2
         Me.Button2.Text = "Browse"
         Me.Button2.UseVisualStyleBackColor = True
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.PictureBox1.Location = New System.Drawing.Point(1, 4)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(146, 67)
-        Me.PictureBox1.TabIndex = 9
-        Me.PictureBox1.TabStop = False
-        '
         'Button5
         '
         Me.Button5.Location = New System.Drawing.Point(4, 7)
@@ -783,6 +783,10 @@ Partial Class Form2
         Me.Button5.TabIndex = 60
         Me.Button5.Text = "< Back"
         Me.Button5.UseVisualStyleBackColor = True
+        '
+        'Timer2
+        '
+        Me.Timer2.Interval = 10000
         '
         'Form2
         '
@@ -925,9 +929,9 @@ Partial Class Form2
     Friend WithEvents RadioButton7 As RadioButton
     Friend WithEvents RadioButton6 As RadioButton
     Friend WithEvents RadioButton5 As RadioButton
-    Friend WithEvents RadioButton4 As RadioButton
+    Friend WithEvents v188 As RadioButton
     Friend WithEvents RadioButton3 As RadioButton
-    Friend WithEvents RadioButton2 As RadioButton
+    Friend WithEvents v1710 As RadioButton
     Friend WithEvents RadioButton1 As RadioButton
     Friend WithEvents Timer1 As Timer
     Friend WithEvents Label14 As Label
@@ -936,4 +940,5 @@ Partial Class Form2
     Friend WithEvents FolderBrowserDialog2 As FolderBrowserDialog
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Button5 As Button
+    Friend WithEvents Timer2 As Timer
 End Class

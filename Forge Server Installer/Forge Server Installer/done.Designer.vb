@@ -41,6 +41,8 @@ Partial Class done
         '
         'Label1
         '
+        Me.Label1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Ravie", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -50,6 +52,7 @@ Partial Class done
         Me.Label1.Size = New System.Drawing.Size(726, 63)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Installation Complete"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'done
         '

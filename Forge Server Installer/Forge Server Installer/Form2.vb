@@ -29,7 +29,7 @@ Public Class Form2
     Public structuresq As String
     Public viewdist As String
     Public gamemode As String
-
+    Public jarTitle As String
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles browsebutton.Click
         MessageBox.Show("It is recommended that you select a new and empty folder")
@@ -253,6 +253,13 @@ Installing:
                     'Directory.CreateDirectory(path & "\libraries\com\typesafe\config\1.2.1")
                     'Directory.CreateDirectory(path & "\libraries\lzma\lzma\0.0.1")
 
+                    jarTitle = "forge_server"
+                    If v188.Checked = True Then
+                        jarTitle = "forge-1.8.8-11.15.0.1655-universal"
+                    ElseIf v1710.Checked = True Then
+                        jarTitle = "forge_server"
+                    End If
+
                     statuslabel.Text = "Creating start file..."
                     sb3.AppendLine("@echo off")
                     sb3.AppendLine("TITLE Forge Server")
@@ -260,7 +267,7 @@ Installing:
                     sb3.AppendLine("echo Check out the website: ")
                     sb3.AppendLine("echo http://www.minecraft-mod-installer.weebly.com")
                     sb3.AppendLine("echo starting server...")
-                    sb3.AppendLine("java -Xms" + Rammb.Value.ToString + "M -Xmx" + Rammb.Value.ToString + "M -jar forge_server.jar")
+                    sb3.AppendLine("java -Xms" + Rammb.Value.ToString + "M -Xmx" + Rammb.Value.ToString + "M -jar " + jarTitle + ".jar")
                     sb3.AppendLine("echo server has either stopped or crashed.")
                     sb3.AppendLine("pause")
 
@@ -277,19 +284,19 @@ Installing:
                     Dim client As WebClient = New WebClient
                     AddHandler client.DownloadProgressChanged, AddressOf client_ProgressChanged
                     AddHandler client.DownloadFileCompleted, AddressOf client_DownloadCompleted
-                    client.DownloadFileAsync(New Uri("https://dl.dropboxusercontent.com/s/n2xw4uqple9h63l/libraries.zip?dl=0"), path + "\TEMP\server_temp.zip")
+                    If v1710.Checked = True Then
+                        client.DownloadFileAsync(New Uri("https://dl.dropboxusercontent.com/s/n2xw4uqple9h63l/libraries.zip?dl=0"), path + "\TEMP\server_temp.zip")
+                    ElseIf v188.Checked = True Then
+                        client.DownloadFileAsync(New Uri("http://files.minecraftforge.net/maven/net/minecraftforge/forge/1.8.8-11.15.0.1655/forge-1.8.8-11.15.0.1655-installer-win.exe"), path + "\Forge_Installer.exe")
+                    End If
 
 
+                Else
+                    MessageBox.Show("To continue with installation you must have read and agreed to the Minecraft EULA")
 
                 End If
             End If
-
-        Else
-            MessageBox.Show("To continue with installation you must have read and agreed to the Minecraft EULA")
-
         End If
-
-
 
 
 
@@ -305,9 +312,17 @@ Installing:
     End Sub
 
     Private Sub client_DownloadCompleted(ByVal sender As Object, ByVal e As System.ComponentModel.AsyncCompletedEventArgs)
-        My.Settings.ziplocation = path + "\TEMP\server_temp.zip"
-        My.Settings.Save()
-        Call unzip()
+        If v1710.Checked = True Then
+            My.Settings.ziplocation = path + "\TEMP\server_temp.zip"
+            My.Settings.Save()
+            Call unzip()
+        Else
+            Process.Start(path + "\Forge_Installer.exe", "--installServer")
+        Timer2.Start()
+        ProgressBar1.Style = ProgressBarStyle.Marquee
+            ProgressBar1.MarqueeAnimationSpeed = 5
+            statuslabel.Text = "Current Status: Installing Forge..."
+        End If
     End Sub
 
 
@@ -389,5 +404,13 @@ Installing:
         Me.Hide()
         Form1.Show()
         Me.Close()
+    End Sub
+
+    Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
+        If File.Exists(My.Settings.installdirectory + "\" + jarTitle + ".jar") Then
+            Hide()
+            done.Show()
+            Close()
+        End If
     End Sub
 End Class
