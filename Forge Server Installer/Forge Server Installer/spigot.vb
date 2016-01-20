@@ -232,7 +232,6 @@ Installing:
                     End Using
 
                     Directory.CreateDirectory(path + "\plugins")
-                    Directory.CreateDirectory(path + "\TEMP")
 
                     statuslabel.Text = "Creating start file..."
                     sb3.AppendLine("@echo off")

@@ -227,7 +227,7 @@ Installing:
                     Using outeula As StreamWriter = New StreamWriter(path + "\eula.txt", True)
                         Await outeula.WriteAsync(sb2.ToString())
                     End Using
-                    Directory.CreateDirectory(path + "\TEMP")
+                    'Directory.CreateDirectory(path + "\TEMP")
                     'Directory.CreateDirectory(path & "\logs")
                     'Directory.CreateDirectory(path & "\libraries")
                     'Directory.CreateDirectory(path & "\crash-reports")

@@ -8,11 +8,11 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("Forge Server Installer")>
-<Assembly: AssemblyDescription("")>
+<Assembly: AssemblyTitle("tfff1's Simple Server Installer")>
+<Assembly: AssemblyDescription("The easiest way to install Minecraft Servers")>
 <Assembly: AssemblyCompany("")>
-<Assembly: AssemblyProduct("Forge Server Installer")>
-<Assembly: AssemblyCopyright("Copyright ©  2015")>
+<Assembly: AssemblyProduct("tfff1's Simple Server Installer")>
+<Assembly: AssemblyCopyright("")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("1.0.0.0")>
-<Assembly: AssemblyFileVersion("1.0.0.0")>
+<Assembly: AssemblyVersion("1.5.0.0")>
+<Assembly: AssemblyFileVersion("1.5.0.0")>
