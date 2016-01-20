@@ -6,3 +6,6 @@ Since then it's features have multiplied massively. The result is the most easy 
 
 Downloads of the compiled product can be found on the website:
 http://server-installer.weebly.com
+
+You should also check out tfff1's Simple mod Installer here:
+http://minecraft-mod-installer.weebly.com
