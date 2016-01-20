@@ -320,6 +320,11 @@ Installing:
             Close()
         End If
 
+        Dim tmpHostName As String = System.Net.Dns.GetHostName()
+        Dim myIPaddress = System.Net.Dns.GetHostByName(tmpHostName).AddressList(0).ToString()
+
+        IPv4.Text = "Your Local Network IP is: " + myIPaddress
+
         iptext.Text = "Enter your server's ip address"
         WebBrowser1.Navigate("https://account.mojang.com/documents/minecraft_eula")
         worldgen.Text = "DEFAULT"
@@ -400,5 +405,9 @@ Installing:
         Me.Hide()
         Form1.Show()
         Me.Close()
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        Process.Start("https://github.com/tfff1OFFICIAL/tfff1s-Forge-Server-Installer/wiki/Local-IP-Address-%28IPv4%29")
     End Sub
 End Class

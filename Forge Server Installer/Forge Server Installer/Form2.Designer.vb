@@ -94,6 +94,8 @@ Partial Class Form2
         Me.FolderBrowserDialog2 = New System.Windows.Forms.FolderBrowserDialog()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
+        Me.IPv4 = New System.Windows.Forms.Label()
+        Me.Button6 = New System.Windows.Forms.Button()
         CType(Me.MaxPlayers, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.viewdistance, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.oppermlevel, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -156,7 +158,7 @@ Partial Class Form2
         '
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Location = New System.Drawing.Point(234, 164)
+        Me.Label2.Location = New System.Drawing.Point(234, 153)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(52, 13)
         Me.Label2.TabIndex = 5
@@ -164,7 +166,7 @@ Partial Class Form2
         '
         'iptext
         '
-        Me.iptext.Location = New System.Drawing.Point(157, 180)
+        Me.iptext.Location = New System.Drawing.Point(157, 169)
         Me.iptext.Name = "iptext"
         Me.iptext.Size = New System.Drawing.Size(194, 20)
         Me.iptext.TabIndex = 6
@@ -464,7 +466,7 @@ Partial Class Form2
         '
         'port
         '
-        Me.port.Location = New System.Drawing.Point(392, 180)
+        Me.port.Location = New System.Drawing.Point(392, 169)
         Me.port.Maximum = New Decimal(New Integer() {65534, 0, 0, 0})
         Me.port.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.port.Name = "port"
@@ -475,7 +477,7 @@ Partial Class Form2
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(357, 182)
+        Me.Label9.Location = New System.Drawing.Point(357, 171)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(29, 13)
         Me.Label9.TabIndex = 38
@@ -483,7 +485,7 @@ Partial Class Form2
         '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(492, 178)
+        Me.Button4.Location = New System.Drawing.Point(492, 167)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(55, 23)
         Me.Button4.TabIndex = 39
@@ -770,6 +772,24 @@ Partial Class Form2
         '
         Me.Timer2.Interval = 1000
         '
+        'IPv4
+        '
+        Me.IPv4.AutoSize = True
+        Me.IPv4.Location = New System.Drawing.Point(157, 196)
+        Me.IPv4.Name = "IPv4"
+        Me.IPv4.Size = New System.Drawing.Size(211, 13)
+        Me.IPv4.TabIndex = 61
+        Me.IPv4.Text = "Your Local Network IP is: 192.192.192.192"
+        '
+        'Button6
+        '
+        Me.Button6.Location = New System.Drawing.Point(374, 191)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(111, 23)
+        Me.Button6.TabIndex = 62
+        Me.Button6.Text = "What is this?"
+        Me.Button6.UseVisualStyleBackColor = True
+        '
         'Form2
         '
         Me.AcceptButton = Me.installbutton
@@ -778,6 +798,8 @@ Partial Class Form2
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1112, 696)
+        Me.Controls.Add(Me.Button6)
+        Me.Controls.Add(Me.IPv4)
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.pathtext2)
@@ -922,4 +944,6 @@ Partial Class Form2
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Button5 As Button
     Friend WithEvents Timer2 As Timer
+    Friend WithEvents IPv4 As Label
+    Friend WithEvents Button6 As Button
 End Class
