@@ -80,14 +80,13 @@ Partial Class Form2
         Me.Label13 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.RadioButton9 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton7 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton6 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton5 = New System.Windows.Forms.RadioButton()
+        Me.v152 = New System.Windows.Forms.RadioButton()
+        Me.v162 = New System.Windows.Forms.RadioButton()
+        Me.v164 = New System.Windows.Forms.RadioButton()
         Me.v188 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
+        Me.v172 = New System.Windows.Forms.RadioButton()
         Me.v1710 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
+        Me.v18 = New System.Windows.Forms.RadioButton()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Label14 = New System.Windows.Forms.Label()
         Me.pathtext2 = New System.Windows.Forms.TextBox()
@@ -632,14 +631,13 @@ Partial Class Form2
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.PictureBox1)
-        Me.GroupBox2.Controls.Add(Me.RadioButton9)
-        Me.GroupBox2.Controls.Add(Me.RadioButton7)
-        Me.GroupBox2.Controls.Add(Me.RadioButton6)
-        Me.GroupBox2.Controls.Add(Me.RadioButton5)
+        Me.GroupBox2.Controls.Add(Me.v152)
+        Me.GroupBox2.Controls.Add(Me.v162)
+        Me.GroupBox2.Controls.Add(Me.v164)
         Me.GroupBox2.Controls.Add(Me.v188)
-        Me.GroupBox2.Controls.Add(Me.RadioButton3)
+        Me.GroupBox2.Controls.Add(Me.v172)
         Me.GroupBox2.Controls.Add(Me.v1710)
-        Me.GroupBox2.Controls.Add(Me.RadioButton1)
+        Me.GroupBox2.Controls.Add(Me.v18)
         Me.GroupBox2.Location = New System.Drawing.Point(12, 28)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(586, 71)
@@ -656,49 +654,35 @@ Partial Class Form2
         Me.PictureBox1.TabIndex = 9
         Me.PictureBox1.TabStop = False
         '
-        'RadioButton9
+        'v152
         '
-        Me.RadioButton9.AutoSize = True
-        Me.RadioButton9.Enabled = False
-        Me.RadioButton9.Location = New System.Drawing.Point(378, 42)
-        Me.RadioButton9.Name = "RadioButton9"
-        Me.RadioButton9.Size = New System.Drawing.Size(49, 17)
-        Me.RadioButton9.TabIndex = 8
-        Me.RadioButton9.Text = "1.4.7"
-        Me.RadioButton9.UseVisualStyleBackColor = True
+        Me.v152.AutoSize = True
+        Me.v152.Location = New System.Drawing.Point(378, 19)
+        Me.v152.Name = "v152"
+        Me.v152.Size = New System.Drawing.Size(49, 17)
+        Me.v152.TabIndex = 6
+        Me.v152.Text = "1.5.2"
+        Me.v152.UseVisualStyleBackColor = True
         '
-        'RadioButton7
+        'v162
         '
-        Me.RadioButton7.AutoSize = True
-        Me.RadioButton7.Enabled = False
-        Me.RadioButton7.Location = New System.Drawing.Point(378, 19)
-        Me.RadioButton7.Name = "RadioButton7"
-        Me.RadioButton7.Size = New System.Drawing.Size(49, 17)
-        Me.RadioButton7.TabIndex = 6
-        Me.RadioButton7.Text = "1.5.2"
-        Me.RadioButton7.UseVisualStyleBackColor = True
+        Me.v162.AutoSize = True
+        Me.v162.Location = New System.Drawing.Point(344, 42)
+        Me.v162.Name = "v162"
+        Me.v162.Size = New System.Drawing.Size(49, 17)
+        Me.v162.TabIndex = 5
+        Me.v162.Text = "1.6.2"
+        Me.v162.UseVisualStyleBackColor = True
         '
-        'RadioButton6
+        'v164
         '
-        Me.RadioButton6.AutoSize = True
-        Me.RadioButton6.Enabled = False
-        Me.RadioButton6.Location = New System.Drawing.Point(308, 42)
-        Me.RadioButton6.Name = "RadioButton6"
-        Me.RadioButton6.Size = New System.Drawing.Size(49, 17)
-        Me.RadioButton6.TabIndex = 5
-        Me.RadioButton6.Text = "1.6.2"
-        Me.RadioButton6.UseVisualStyleBackColor = True
-        '
-        'RadioButton5
-        '
-        Me.RadioButton5.AutoSize = True
-        Me.RadioButton5.Enabled = False
-        Me.RadioButton5.Location = New System.Drawing.Point(308, 19)
-        Me.RadioButton5.Name = "RadioButton5"
-        Me.RadioButton5.Size = New System.Drawing.Size(49, 17)
-        Me.RadioButton5.TabIndex = 4
-        Me.RadioButton5.Text = "1.6.4"
-        Me.RadioButton5.UseVisualStyleBackColor = True
+        Me.v164.AutoSize = True
+        Me.v164.Location = New System.Drawing.Point(308, 19)
+        Me.v164.Name = "v164"
+        Me.v164.Size = New System.Drawing.Size(49, 17)
+        Me.v164.TabIndex = 4
+        Me.v164.Text = "1.6.4"
+        Me.v164.UseVisualStyleBackColor = True
         '
         'v188
         '
@@ -710,16 +694,15 @@ Partial Class Form2
         Me.v188.Text = "1.8.8"
         Me.v188.UseVisualStyleBackColor = True
         '
-        'RadioButton3
+        'v172
         '
-        Me.RadioButton3.AutoSize = True
-        Me.RadioButton3.Enabled = False
-        Me.RadioButton3.Location = New System.Drawing.Point(236, 42)
-        Me.RadioButton3.Name = "RadioButton3"
-        Me.RadioButton3.Size = New System.Drawing.Size(49, 17)
-        Me.RadioButton3.TabIndex = 2
-        Me.RadioButton3.Text = "1.7.2"
-        Me.RadioButton3.UseVisualStyleBackColor = True
+        Me.v172.AutoSize = True
+        Me.v172.Location = New System.Drawing.Point(270, 42)
+        Me.v172.Name = "v172"
+        Me.v172.Size = New System.Drawing.Size(49, 17)
+        Me.v172.TabIndex = 2
+        Me.v172.Text = "1.7.2"
+        Me.v172.UseVisualStyleBackColor = True
         '
         'v1710
         '
@@ -733,16 +716,15 @@ Partial Class Form2
         Me.v1710.Text = "1.7.10"
         Me.v1710.UseVisualStyleBackColor = True
         '
-        'RadioButton1
+        'v18
         '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Enabled = False
-        Me.RadioButton1.Location = New System.Drawing.Point(172, 42)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(40, 17)
-        Me.RadioButton1.TabIndex = 0
-        Me.RadioButton1.Text = "1.8"
-        Me.RadioButton1.UseVisualStyleBackColor = True
+        Me.v18.AutoSize = True
+        Me.v18.Location = New System.Drawing.Point(209, 42)
+        Me.v18.Name = "v18"
+        Me.v18.Size = New System.Drawing.Size(40, 17)
+        Me.v18.TabIndex = 0
+        Me.v18.Text = "1.8"
+        Me.v18.UseVisualStyleBackColor = True
         '
         'Timer1
         '
@@ -786,7 +768,7 @@ Partial Class Form2
         '
         'Timer2
         '
-        Me.Timer2.Interval = 10000
+        Me.Timer2.Interval = 1000
         '
         'Form2
         '
@@ -925,14 +907,13 @@ Partial Class Form2
     Friend WithEvents Rammb As NumericUpDown
     Friend WithEvents Label13 As Label
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents RadioButton9 As RadioButton
-    Friend WithEvents RadioButton7 As RadioButton
-    Friend WithEvents RadioButton6 As RadioButton
-    Friend WithEvents RadioButton5 As RadioButton
+    Friend WithEvents v152 As RadioButton
+    Friend WithEvents v162 As RadioButton
+    Friend WithEvents v164 As RadioButton
     Friend WithEvents v188 As RadioButton
-    Friend WithEvents RadioButton3 As RadioButton
+    Friend WithEvents v172 As RadioButton
     Friend WithEvents v1710 As RadioButton
-    Friend WithEvents RadioButton1 As RadioButton
+    Friend WithEvents v18 As RadioButton
     Friend WithEvents Timer1 As Timer
     Friend WithEvents Label14 As Label
     Friend WithEvents pathtext2 As TextBox

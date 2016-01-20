@@ -256,8 +256,18 @@ Installing:
                     jarTitle = "forge_server"
                     If v188.Checked = True Then
                         jarTitle = "forge-1.8.8-11.15.0.1655-universal"
+                    ElseIf v18.Checked = True Then
+                        jarTitle = "forge-1.8-11.14.4.1563-universal"
                     ElseIf v1710.Checked = True Then
-                        jarTitle = "forge_server"
+                        jarTitle = "forge-1.7.10-10.13.4.1558-1.7.10-universal"
+                    ElseIf v172.Checked = True Then
+                        jarTitle = "forge-1.7.2-10.12.2.1121-universal"
+                    ElseIf v164.Checked = True Then
+                        jarTitle = "minecraftforge-universal-1.6.4-9.11.1.1345"
+                    ElseIf v162.Checked = True Then
+                        jarTitle = "minecraftforge-universal-1.6.2-9.10.1.871"
+                    ElseIf v152.Checked = True Then
+                        jarTitle = "minecraftforge-universal-1.5.2-7.8.1.737"
                     End If
 
                     statuslabel.Text = "Creating start file..."
@@ -285,9 +295,21 @@ Installing:
                     AddHandler client.DownloadProgressChanged, AddressOf client_ProgressChanged
                     AddHandler client.DownloadFileCompleted, AddressOf client_DownloadCompleted
                     If v1710.Checked = True Then
-                        client.DownloadFileAsync(New Uri("https://dl.dropboxusercontent.com/s/n2xw4uqple9h63l/libraries.zip?dl=0"), path + "\TEMP\server_temp.zip")
+                        client.DownloadFileAsync(New Uri("http://files.minecraftforge.net/maven/net/minecraftforge/forge/1.7.10-10.13.4.1558-1.7.10/forge-1.7.10-10.13.4.1558-1.7.10-installer-win.exe"), path + "\Forge_Installer.exe")
                     ElseIf v188.Checked = True Then
                         client.DownloadFileAsync(New Uri("http://files.minecraftforge.net/maven/net/minecraftforge/forge/1.8.8-11.15.0.1655/forge-1.8.8-11.15.0.1655-installer-win.exe"), path + "\Forge_Installer.exe")
+                    ElseIf v18.Checked = True Then
+                        client.DownloadFileAsync(New Uri("http://files.minecraftforge.net/maven/net/minecraftforge/forge/1.8-11.14.4.1563/forge-1.8-11.14.4.1563-installer-win.exe"), path + "\Forge_Installer.exe")
+                    ElseIf v172.Checked = True Then
+                        client.DownloadFileAsync(New Uri("http://files.minecraftforge.net/maven/net/minecraftforge/forge/1.7.2-10.12.2.1121/forge-1.7.2-10.12.2.1121-installer-win.exe"), path + "\Forge_Installer.exe")
+                    ElseIf v164.Checked = True Then
+                        client.DownloadFileAsync(New Uri("http://files.minecraftforge.net/maven/net/minecraftforge/forge/1.6.4-9.11.1.1345/forge-1.6.4-9.11.1.1345-installer-win.exe"), path + "\Forge_Installer.exe")
+                    ElseIf v162.Checked = True Then
+                        client.DownloadFileAsync(New Uri("http://files.minecraftforge.net/maven/net/minecraftforge/forge/1.6.2-9.10.1.871/forge-1.6.2-9.10.1.871-installer.jar"), path + "\Forge_Installer.jar")
+                    ElseIf v152.Checked = True Then
+                        client.DownloadFileAsync(New Uri("http://files.minecraftforge.net/maven/net/minecraftforge/forge/1.5.2-7.8.1.737/forge-1.5.2-7.8.1.737-installer.jar"), path + "\Forge_Installer.jar")
+                    Else
+                        MsgBox("You have not selected a version, somehow...")
                     End If
 
 
@@ -312,17 +334,33 @@ Installing:
     End Sub
 
     Private Sub client_DownloadCompleted(ByVal sender As Object, ByVal e As System.ComponentModel.AsyncCompletedEventArgs)
-        If v1710.Checked = True Then
-            My.Settings.ziplocation = path + "\TEMP\server_temp.zip"
-            My.Settings.Save()
-            Call unzip()
+        ProgressBar1.Style = ProgressBarStyle.Marquee
+        ProgressBar1.MarqueeAnimationSpeed = 5
+        statuslabel.Text = "Extracting Forge Libraries..."
+install:
+        If v162.Checked = True Then
+            Using sw As New StreamWriter(path + "\install.bat", True)
+                sw.WriteLine("java -jar " + """" + path + "\Forge_Installer.jar" + """" + " --installServer")
+                sw.WriteLine("exit")
+            End Using
+            Threading.Thread.Sleep(400)
+            MsgBox("Double click on install.bat and once that has closed you may double click start.cmd")
+            Process.Start(path)
+            Close()
+        ElseIf v152.Checked = True Then
+            Using sw As New StreamWriter(path + "\install.bat", True)
+                sw.WriteLine("java -jar " + """" + path + "\Forge_Installer.jar" + """" + " --installServer")
+                sw.WriteLine("exit")
+            End Using
+            Threading.Thread.Sleep(400)
+            MsgBox("Double click on install.bat and once that has closed you may double click start.cmd")
+            Process.Start(path)
+            Close()
         Else
             Process.Start(path + "\Forge_Installer.exe", "--installServer")
-        Timer2.Start()
-        ProgressBar1.Style = ProgressBarStyle.Marquee
-            ProgressBar1.MarqueeAnimationSpeed = 5
             statuslabel.Text = "Current Status: Installing Forge..."
         End If
+        Timer2.Start()
     End Sub
 
 
@@ -408,9 +446,13 @@ Installing:
 
     Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
         If File.Exists(My.Settings.installdirectory + "\" + jarTitle + ".jar") Then
-            Hide()
-            done.Show()
-            Close()
+            If File.Exists(path + "\install.bat") Then
+                File.Delete(path + "\install.bat")
+            Else
+                Hide()
+                done.Show()
+                Close()
+            End If
         End If
     End Sub
 End Class

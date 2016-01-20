@@ -4,6 +4,7 @@ Imports System.Security.Permissions
 
 Module Module1
     Sub unzip()
+
         'Dim startPath As String = "c:\example\start"
         'location of zip file:
         Dim zipPath As String = My.Settings.ziplocation
@@ -17,8 +18,6 @@ Module Module1
         If My.Computer.FileSystem.DirectoryExists(My.Settings.installdirectory + "\TEMP") Then
             System.IO.Directory.Delete(My.Settings.installdirectory + "\TEMP", True)
         End If
-
-        Form2.ProgressBar1.Value = "100"
 
         Form2.Hide()
         done.Show()
