@@ -23,4 +23,10 @@
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
         forge.Checked = True
     End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Hide()
+        Edit.Show()
+        Close()
+    End Sub
 End Class

@@ -83,6 +83,12 @@
     <Compile Include="done.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Edit.Designer.vb">
+      <DependentUpon>Edit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Edit.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +141,9 @@
   <ItemGroup>
     <EmbeddedResource Include="done.resx">
       <DependentUpon>done.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit.resx">
+      <DependentUpon>Edit.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>

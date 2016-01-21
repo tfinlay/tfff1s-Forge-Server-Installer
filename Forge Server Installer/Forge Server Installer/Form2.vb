@@ -381,7 +381,7 @@ install:
         End If
 
         Dim tmpHostName As String = System.Net.Dns.GetHostName()
-        Dim myIPaddress = System.Net.Dns.GetHostByName(tmpHostName).AddressList(0).ToString()
+        Dim myIPaddress = Dns.GetHostByName(tmpHostName).AddressList(0).ToString()
 
         IPv4.Text = "Your Local Network IP is: " + myIPaddress
 

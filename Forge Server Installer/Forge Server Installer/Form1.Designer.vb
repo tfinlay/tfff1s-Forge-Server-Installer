@@ -31,6 +31,9 @@ Partial Class Form1
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Button3 = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -56,7 +59,7 @@ Partial Class Form1
         'spigotcheck
         '
         Me.spigotcheck.AutoSize = True
-        Me.spigotcheck.Location = New System.Drawing.Point(71, 275)
+        Me.spigotcheck.Location = New System.Drawing.Point(84, 310)
         Me.spigotcheck.Name = "spigotcheck"
         Me.spigotcheck.Size = New System.Drawing.Size(128, 17)
         Me.spigotcheck.TabIndex = 2
@@ -68,7 +71,7 @@ Partial Class Form1
         'forge
         '
         Me.forge.AutoSize = True
-        Me.forge.Location = New System.Drawing.Point(360, 275)
+        Me.forge.Location = New System.Drawing.Point(373, 310)
         Me.forge.Name = "forge"
         Me.forge.Size = New System.Drawing.Size(242, 17)
         Me.forge.TabIndex = 3
@@ -82,7 +85,7 @@ Partial Class Form1
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), System.Drawing.Image)
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.PictureBox1.Location = New System.Drawing.Point(34, 95)
+        Me.PictureBox1.Location = New System.Drawing.Point(47, 130)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(214, 174)
         Me.PictureBox1.TabIndex = 4
@@ -93,11 +96,41 @@ Partial Class Form1
         Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox2.BackgroundImage = CType(resources.GetObject("PictureBox2.BackgroundImage"), System.Drawing.Image)
         Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.PictureBox2.Location = New System.Drawing.Point(360, 168)
+        Me.PictureBox2.Location = New System.Drawing.Point(373, 203)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(242, 100)
         Me.PictureBox2.TabIndex = 5
         Me.PictureBox2.TabStop = False
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(304, 76)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(31, 24)
+        Me.Label1.TabIndex = 6
+        Me.Label1.Text = "Or"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(261, 107)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(124, 20)
+        Me.Label2.TabIndex = 7
+        Me.Label2.Text = "Create a Server:"
+        '
+        'Button3
+        '
+        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.Location = New System.Drawing.Point(227, 12)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(200, 34)
+        Me.Button3.TabIndex = 8
+        Me.Button3.Text = "Edit an Existing Server"
+        Me.Button3.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -106,6 +139,9 @@ Partial Class Form1
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(671, 377)
+        Me.Controls.Add(Me.Button3)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.forge)
@@ -131,4 +167,7 @@ Partial Class Form1
     Friend WithEvents ToolTip1 As ToolTip
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Button3 As Button
 End Class
