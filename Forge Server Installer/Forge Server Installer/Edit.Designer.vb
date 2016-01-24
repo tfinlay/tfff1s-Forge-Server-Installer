@@ -22,6 +22,8 @@ Partial Class Edit
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Edit))
         Me.Button6 = New System.Windows.Forms.Button()
         Me.IPv4 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
@@ -75,15 +77,21 @@ Partial Class Edit
         Me.iptext = New System.Windows.Forms.TextBox()
         Me.installbutton = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.pathtext = New System.Windows.Forms.TextBox()
-        Me.browsebutton = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Forge = New System.Windows.Forms.RadioButton()
+        Me.Spigot = New System.Windows.Forms.RadioButton()
+        Me.Vanilla = New System.Windows.Forms.RadioButton()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Button5 = New System.Windows.Forms.Button()
         CType(Me.Rammb, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.port, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.oppermlevel, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.viewdistance, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MaxPlayers, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Button6
@@ -115,7 +123,7 @@ Partial Class Edit
         '
         'Rammb
         '
-        Me.Rammb.Location = New System.Drawing.Point(276, 668)
+        Me.Rammb.Location = New System.Drawing.Point(281, 619)
         Me.Rammb.Maximum = New Decimal(New Integer() {16000, 0, 0, 0})
         Me.Rammb.Name = "Rammb"
         Me.Rammb.Size = New System.Drawing.Size(91, 20)
@@ -125,7 +133,7 @@ Partial Class Edit
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(143, 668)
+        Me.Label12.Location = New System.Drawing.Point(148, 619)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(126, 13)
         Me.Label12.TabIndex = 170
@@ -153,10 +161,10 @@ Partial Class Edit
         Me.Label14.AutoSize = True
         Me.Label14.Location = New System.Drawing.Point(101, 322)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(405, 13)
+        Me.Label14.Size = New System.Drawing.Size(445, 13)
         Me.Label14.TabIndex = 172
-        Me.Label14.Text = "If you have a folder full of plugins you want to add to your server then choose i" &
-    "t here:"
+        Me.Label14.Text = "If you have a folder full of plugins or mods you want to add to your server then " &
+    "choose it here:"
         '
         'ProgressBar1
         '
@@ -177,7 +185,7 @@ Partial Class Edit
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(215, 599)
+        Me.Label11.Location = New System.Drawing.Point(220, 550)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(140, 13)
         Me.Label11.TabIndex = 167
@@ -189,7 +197,7 @@ Partial Class Edit
         Me.GroupBox1.Controls.Add(Me.Adventure)
         Me.GroupBox1.Controls.Add(Me.Creative)
         Me.GroupBox1.ForeColor = System.Drawing.Color.Black
-        Me.GroupBox1.Location = New System.Drawing.Point(29, 615)
+        Me.GroupBox1.Location = New System.Drawing.Point(34, 566)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(519, 50)
         Me.GroupBox1.TabIndex = 166
@@ -240,7 +248,7 @@ Partial Class Edit
         'flight
         '
         Me.flight.AutoSize = True
-        Me.flight.Location = New System.Drawing.Point(30, 540)
+        Me.flight.Location = New System.Drawing.Point(35, 491)
         Me.flight.Name = "flight"
         Me.flight.Size = New System.Drawing.Size(76, 17)
         Me.flight.TabIndex = 163
@@ -252,7 +260,7 @@ Partial Class Edit
         Me.nether.AutoSize = True
         Me.nether.Checked = True
         Me.nether.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.nether.Location = New System.Drawing.Point(428, 516)
+        Me.nether.Location = New System.Drawing.Point(433, 467)
         Me.nether.Name = "nether"
         Me.nether.Size = New System.Drawing.Size(84, 17)
         Me.nether.TabIndex = 162
@@ -291,7 +299,7 @@ Partial Class Edit
         '
         Me.Easy.AutoSize = True
         Me.Easy.Checked = True
-        Me.Easy.Location = New System.Drawing.Point(165, 568)
+        Me.Easy.Location = New System.Drawing.Point(170, 519)
         Me.Easy.Name = "Easy"
         Me.Easy.Size = New System.Drawing.Size(63, 17)
         Me.Easy.TabIndex = 158
@@ -302,7 +310,7 @@ Partial Class Edit
         'Normal
         '
         Me.Normal.AutoSize = True
-        Me.Normal.Location = New System.Drawing.Point(307, 568)
+        Me.Normal.Location = New System.Drawing.Point(312, 519)
         Me.Normal.Name = "Normal"
         Me.Normal.Size = New System.Drawing.Size(73, 17)
         Me.Normal.TabIndex = 157
@@ -312,7 +320,7 @@ Partial Class Edit
         'Hard
         '
         Me.Hard.AutoSize = True
-        Me.Hard.Location = New System.Drawing.Point(459, 568)
+        Me.Hard.Location = New System.Drawing.Point(464, 519)
         Me.Hard.Name = "Hard"
         Me.Hard.Size = New System.Drawing.Size(63, 17)
         Me.Hard.TabIndex = 156
@@ -322,7 +330,7 @@ Partial Class Edit
         'Peaceful
         '
         Me.Peaceful.AutoSize = True
-        Me.Peaceful.Location = New System.Drawing.Point(30, 568)
+        Me.Peaceful.Location = New System.Drawing.Point(35, 519)
         Me.Peaceful.Name = "Peaceful"
         Me.Peaceful.Size = New System.Drawing.Size(82, 17)
         Me.Peaceful.TabIndex = 155
@@ -331,7 +339,7 @@ Partial Class Edit
         '
         'oppermlevel
         '
-        Me.oppermlevel.Location = New System.Drawing.Point(499, 491)
+        Me.oppermlevel.Location = New System.Drawing.Point(504, 442)
         Me.oppermlevel.Name = "oppermlevel"
         Me.oppermlevel.Size = New System.Drawing.Size(50, 20)
         Me.oppermlevel.TabIndex = 154
@@ -339,7 +347,7 @@ Partial Class Edit
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(392, 493)
+        Me.Label8.Location = New System.Drawing.Point(397, 444)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(106, 13)
         Me.Label8.TabIndex = 153
@@ -348,7 +356,7 @@ Partial Class Edit
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(260, 546)
+        Me.Label7.Location = New System.Drawing.Point(265, 497)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(47, 13)
         Me.Label7.TabIndex = 152
@@ -356,7 +364,7 @@ Partial Class Edit
         '
         'viewdistance
         '
-        Me.viewdistance.Location = New System.Drawing.Point(499, 469)
+        Me.viewdistance.Location = New System.Drawing.Point(504, 420)
         Me.viewdistance.Name = "viewdistance"
         Me.viewdistance.Size = New System.Drawing.Size(50, 20)
         Me.viewdistance.TabIndex = 151
@@ -364,7 +372,7 @@ Partial Class Edit
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(414, 471)
+        Me.Label6.Location = New System.Drawing.Point(419, 422)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(78, 13)
         Me.Label6.TabIndex = 150
@@ -372,18 +380,18 @@ Partial Class Edit
         '
         'MaxPlayers
         '
-        Me.MaxPlayers.Location = New System.Drawing.Point(499, 447)
+        Me.MaxPlayers.Location = New System.Drawing.Point(504, 398)
         Me.MaxPlayers.Maximum = New Decimal(New Integer() {1569325056, 23283064, 0, 0})
         Me.MaxPlayers.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.MaxPlayers.Name = "MaxPlayers"
         Me.MaxPlayers.Size = New System.Drawing.Size(50, 20)
         Me.MaxPlayers.TabIndex = 149
-        Me.MaxPlayers.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.MaxPlayers.Value = New Decimal(New Integer() {5, 0, 0, 0})
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(425, 451)
+        Me.Label5.Location = New System.Drawing.Point(430, 402)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(67, 13)
         Me.Label5.TabIndex = 148
@@ -394,7 +402,7 @@ Partial Class Edit
         Me.structures.AutoSize = True
         Me.structures.Checked = True
         Me.structures.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.structures.Location = New System.Drawing.Point(428, 424)
+        Me.structures.Location = New System.Drawing.Point(433, 375)
         Me.structures.Name = "structures"
         Me.structures.Size = New System.Drawing.Size(121, 17)
         Me.structures.TabIndex = 147
@@ -406,7 +414,7 @@ Partial Class Edit
         Me.pvp.AutoSize = True
         Me.pvp.Checked = True
         Me.pvp.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.pvp.Location = New System.Drawing.Point(242, 470)
+        Me.pvp.Location = New System.Drawing.Point(247, 421)
         Me.pvp.Name = "pvp"
         Me.pvp.Size = New System.Drawing.Size(46, 17)
         Me.pvp.TabIndex = 146
@@ -416,7 +424,7 @@ Partial Class Edit
         'commandblocks
         '
         Me.commandblocks.AutoSize = True
-        Me.commandblocks.Location = New System.Drawing.Point(242, 493)
+        Me.commandblocks.Location = New System.Drawing.Point(247, 444)
         Me.commandblocks.Name = "commandblocks"
         Me.commandblocks.Size = New System.Drawing.Size(144, 17)
         Me.commandblocks.TabIndex = 145
@@ -428,7 +436,7 @@ Partial Class Edit
         Me.monsters.AutoSize = True
         Me.monsters.Checked = True
         Me.monsters.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.monsters.Location = New System.Drawing.Point(242, 516)
+        Me.monsters.Location = New System.Drawing.Point(247, 467)
         Me.monsters.Name = "monsters"
         Me.monsters.Size = New System.Drawing.Size(175, 17)
         Me.monsters.TabIndex = 144
@@ -440,7 +448,7 @@ Partial Class Edit
         Me.snooper.AutoSize = True
         Me.snooper.Checked = True
         Me.snooper.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.snooper.Location = New System.Drawing.Point(242, 424)
+        Me.snooper.Location = New System.Drawing.Point(247, 375)
         Me.snooper.Name = "snooper"
         Me.snooper.Size = New System.Drawing.Size(108, 17)
         Me.snooper.TabIndex = 143
@@ -452,7 +460,7 @@ Partial Class Edit
         Me.online.AutoSize = True
         Me.online.Checked = True
         Me.online.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.online.Location = New System.Drawing.Point(242, 447)
+        Me.online.Location = New System.Drawing.Point(247, 398)
         Me.online.Name = "online"
         Me.online.Size = New System.Drawing.Size(86, 17)
         Me.online.TabIndex = 142
@@ -462,7 +470,7 @@ Partial Class Edit
         'forcegm
         '
         Me.forcegm.AutoSize = True
-        Me.forcegm.Location = New System.Drawing.Point(30, 447)
+        Me.forcegm.Location = New System.Drawing.Point(35, 398)
         Me.forcegm.Name = "forcegm"
         Me.forcegm.Size = New System.Drawing.Size(110, 17)
         Me.forcegm.TabIndex = 141
@@ -474,7 +482,7 @@ Partial Class Edit
         Me.npcs.AutoSize = True
         Me.npcs.Checked = True
         Me.npcs.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.npcs.Location = New System.Drawing.Point(30, 470)
+        Me.npcs.Location = New System.Drawing.Point(35, 421)
         Me.npcs.Name = "npcs"
         Me.npcs.Size = New System.Drawing.Size(156, 17)
         Me.npcs.TabIndex = 140
@@ -486,7 +494,7 @@ Partial Class Edit
         Me.animals.AutoSize = True
         Me.animals.Checked = True
         Me.animals.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.animals.Location = New System.Drawing.Point(30, 493)
+        Me.animals.Location = New System.Drawing.Point(35, 444)
         Me.animals.Name = "animals"
         Me.animals.Size = New System.Drawing.Size(98, 17)
         Me.animals.TabIndex = 139
@@ -496,7 +504,7 @@ Partial Class Edit
         'hardcore
         '
         Me.hardcore.AutoSize = True
-        Me.hardcore.Location = New System.Drawing.Point(30, 516)
+        Me.hardcore.Location = New System.Drawing.Point(35, 467)
         Me.hardcore.Name = "hardcore"
         Me.hardcore.Size = New System.Drawing.Size(70, 17)
         Me.hardcore.TabIndex = 138
@@ -508,7 +516,7 @@ Partial Class Edit
         Me.playerachievements.AutoSize = True
         Me.playerachievements.Checked = True
         Me.playerachievements.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.playerachievements.Location = New System.Drawing.Point(30, 424)
+        Me.playerachievements.Location = New System.Drawing.Point(35, 375)
         Me.playerachievements.Name = "playerachievements"
         Me.playerachievements.Size = New System.Drawing.Size(171, 17)
         Me.playerachievements.TabIndex = 137
@@ -558,6 +566,8 @@ Partial Class Edit
         '
         'WebBrowser1
         '
+        Me.WebBrowser1.AllowNavigation = False
+        Me.WebBrowser1.AllowWebBrowserDrop = False
         Me.WebBrowser1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -566,6 +576,7 @@ Partial Class Edit
         Me.WebBrowser1.Name = "WebBrowser1"
         Me.WebBrowser1.Size = New System.Drawing.Size(639, 649)
         Me.WebBrowser1.TabIndex = 131
+        Me.WebBrowser1.Url = New System.Uri("https://account.mojang.com/documents/minecraft_eula", System.UriKind.Absolute)
         '
         'CheckBox1
         '
@@ -608,37 +619,90 @@ Partial Class Edit
         Me.Button1.Text = "Cancel"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'pathtext
+        'Label2
         '
-        Me.pathtext.Location = New System.Drawing.Point(35, 121)
-        Me.pathtext.Name = "pathtext"
-        Me.pathtext.Size = New System.Drawing.Size(438, 20)
-        Me.pathtext.TabIndex = 126
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(191, 9)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(210, 13)
+        Me.Label2.TabIndex = 183
+        Me.Label2.Text = "What Kind of server would you like to Edit?"
         '
-        'browsebutton
+        'GroupBox2
         '
-        Me.browsebutton.Location = New System.Drawing.Point(479, 119)
-        Me.browsebutton.Name = "browsebutton"
-        Me.browsebutton.Size = New System.Drawing.Size(75, 23)
-        Me.browsebutton.TabIndex = 125
-        Me.browsebutton.Text = "Browse"
-        Me.browsebutton.UseVisualStyleBackColor = True
+        Me.GroupBox2.Controls.Add(Me.Vanilla)
+        Me.GroupBox2.Controls.Add(Me.Spigot)
+        Me.GroupBox2.Controls.Add(Me.Forge)
+        Me.GroupBox2.Location = New System.Drawing.Point(16, 26)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(569, 76)
+        Me.GroupBox2.TabIndex = 184
+        Me.GroupBox2.TabStop = False
+        '
+        'Forge
+        '
+        Me.Forge.AutoSize = True
+        Me.Forge.Location = New System.Drawing.Point(149, 31)
+        Me.Forge.Name = "Forge"
+        Me.Forge.Size = New System.Drawing.Size(52, 17)
+        Me.Forge.TabIndex = 0
+        Me.Forge.Text = "Forge"
+        Me.Forge.UseVisualStyleBackColor = True
+        '
+        'Spigot
+        '
+        Me.Spigot.AutoSize = True
+        Me.Spigot.Checked = True
+        Me.Spigot.Location = New System.Drawing.Point(248, 31)
+        Me.Spigot.Name = "Spigot"
+        Me.Spigot.Size = New System.Drawing.Size(55, 17)
+        Me.Spigot.TabIndex = 1
+        Me.Spigot.TabStop = True
+        Me.Spigot.Text = "Spigot"
+        Me.Spigot.UseVisualStyleBackColor = True
+        '
+        'Vanilla
+        '
+        Me.Vanilla.AutoSize = True
+        Me.Vanilla.Enabled = False
+        Me.Vanilla.Location = New System.Drawing.Point(359, 31)
+        Me.Vanilla.Name = "Vanilla"
+        Me.Vanilla.Size = New System.Drawing.Size(56, 17)
+        Me.Vanilla.TabIndex = 2
+        Me.Vanilla.Text = "Vanilla"
+        Me.Vanilla.UseVisualStyleBackColor = True
+        '
+        'Timer1
+        '
+        Me.Timer1.Enabled = True
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Location = New System.Drawing.Point(191, 93)
+        Me.Label1.Location = New System.Drawing.Point(158, 127)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(211, 13)
-        Me.Label1.TabIndex = 124
-        Me.Label1.Text = "Where would you like your server installed?"
+        Me.Label1.Size = New System.Drawing.Size(88, 13)
+        Me.Label1.TabIndex = 185
+        Me.Label1.Text = "Server Location: "
+        '
+        'Button5
+        '
+        Me.Button5.Location = New System.Drawing.Point(100, 122)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(52, 23)
+        Me.Button5.TabIndex = 186
+        Me.Button5.Text = "Change"
+        Me.Button5.UseVisualStyleBackColor = True
         '
         'Edit
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1230, 737)
+        Me.Controls.Add(Me.Button5)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.GroupBox2)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Button6)
         Me.Controls.Add(Me.IPv4)
         Me.Controls.Add(Me.Button2)
@@ -689,11 +753,10 @@ Partial Class Edit
         Me.Controls.Add(Me.iptext)
         Me.Controls.Add(Me.installbutton)
         Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.pathtext)
-        Me.Controls.Add(Me.browsebutton)
-        Me.Controls.Add(Me.Label1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Edit"
         Me.Text = "Edit"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.Rammb, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
@@ -701,6 +764,8 @@ Partial Class Edit
         CType(Me.oppermlevel, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.viewdistance, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MaxPlayers, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -759,7 +824,12 @@ Partial Class Edit
     Friend WithEvents iptext As TextBox
     Friend WithEvents installbutton As Button
     Friend WithEvents Button1 As Button
-    Friend WithEvents pathtext As TextBox
-    Friend WithEvents browsebutton As Button
+    Friend WithEvents Label2 As Label
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents Vanilla As RadioButton
+    Friend WithEvents Spigot As RadioButton
+    Friend WithEvents Forge As RadioButton
+    Friend WithEvents Timer1 As Timer
     Friend WithEvents Label1 As Label
+    Friend WithEvents Button5 As Button
 End Class

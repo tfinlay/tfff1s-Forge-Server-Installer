@@ -47,3 +47,4 @@ C:\Users\Thomas Finlay\Source\Repos\tfff1s-Forge-Server-Installer\Forge Server I
 C:\Users\Thomas Finlay\Source\Repos\tfff1s-Forge-Server-Installer\Forge Server Installer\Forge Server Installer\obj\Debug\Forge_Server_Installer.SplashScreen1.resources
 C:\Users\Thomas Finlay\Source\Repos\tfff1s-Forge-Server-Installer\Forge Server Installer\Forge Server Installer\obj\Debug\Forge Server Installer.vbproj.GenerateResource.Cache
 C:\Users\Thomas Finlay\Source\Repos\tfff1s-Forge-Server-Installer\Forge Server Installer\Forge Server Installer\obj\Debug\Forge_Server_Installer.Edit.resources
+C:\Users\Thomas Finlay\Source\Repos\tfff1s-Forge-Server-Installer\Forge Server Installer\Forge Server Installer\obj\Debug\Forge_Server_Installer.Select_Folder.resources
