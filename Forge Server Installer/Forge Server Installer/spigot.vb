@@ -298,12 +298,30 @@ Installing:
     Private Sub client_DownloadCompleted(ByVal sender As Object, ByVal e As System.ComponentModel.AsyncCompletedEventArgs)
         statuslabel.Text = "Installation Complete!"
         ProgressBar1.Value = 100
+        If worldedit.Checked = True Then
+            Call worldEditInstall()
+        End If
         Me.Hide()
         done.Show()
         Me.Close()
     End Sub
 
+    Public Sub worldEditInstall()
+        statuslabel.Text = "Current Status: Downloading and Installing WorldEdit..."
+        Dim client As WebClient = New WebClient
+        AddHandler client.DownloadProgressChanged, AddressOf client_ProgressChanged
+        AddHandler client.DownloadFileCompleted, AddressOf client_DownloadCompleted
+        If v18.Checked = True Then
+            client.DownloadFileAsync(New Uri("http://dev.bukkit.org/media/files/880/435/worldedit-bukkit-6.1.jar"), path + "\plugins\worldedit-bukkit-6.1.jar")
+        ElseIf v175.Checked = True Then
+            client.DownloadFileAsync(New Uri("http://dev.bukkit.org/media/files/837/363/worldedit-bukkit-6.0.jar"), path + "\plugins\worldedit-bukkit-6.0.jar")
+        ElseIf v179.Checked = True Then
+            client.DownloadFileAsync(New Uri("http://dev.bukkit.org/media/files/837/363/worldedit-bukkit-6.0.jar"), path + "\plugins\worldedit-bukkit-6.0.jar")
+        ElseIf v1710.Checked = True Then
+            client.DownloadFileAsync(New Uri("http://dev.bukkit.org/media/files/837/363/worldedit-bukkit-6.0.jar"), path + "\plugins\worldedit-bukkit-6.0.jar")
+        End If
 
+    End Sub
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
         MessageBox.Show("Setup Cancelled")
@@ -409,5 +427,11 @@ Installing:
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
         Process.Start("https://github.com/tfff1OFFICIAL/tfff1s-Forge-Server-Installer/wiki/Local-IP-Address-%28IPv4%29")
+    End Sub
+
+    Private Sub IPv4_Click(sender As Object, e As EventArgs) Handles IPv4.Click
+        Dim tmpHostName As String = System.Net.Dns.GetHostName()
+        Dim myIPaddress = System.Net.Dns.GetHostByName(tmpHostName).AddressList(0).ToString()
+        iptext.Text = myIPaddress
     End Sub
 End Class

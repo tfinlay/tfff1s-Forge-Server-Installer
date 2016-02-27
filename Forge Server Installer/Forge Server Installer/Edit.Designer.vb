@@ -79,9 +79,9 @@ Partial Class Edit
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Forge = New System.Windows.Forms.RadioButton()
-        Me.Spigot = New System.Windows.Forms.RadioButton()
         Me.Vanilla = New System.Windows.Forms.RadioButton()
+        Me.Spigot = New System.Windows.Forms.RadioButton()
+        Me.Forge = New System.Windows.Forms.RadioButton()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button5 = New System.Windows.Forms.Button()
@@ -123,6 +123,7 @@ Partial Class Edit
         '
         'Rammb
         '
+        Me.Rammb.Increment = New Decimal(New Integer() {1000, 0, 0, 0})
         Me.Rammb.Location = New System.Drawing.Point(281, 619)
         Me.Rammb.Maximum = New Decimal(New Integer() {16000, 0, 0, 0})
         Me.Rammb.Name = "Rammb"
@@ -639,15 +640,16 @@ Partial Class Edit
         Me.GroupBox2.TabIndex = 184
         Me.GroupBox2.TabStop = False
         '
-        'Forge
+        'Vanilla
         '
-        Me.Forge.AutoSize = True
-        Me.Forge.Location = New System.Drawing.Point(149, 31)
-        Me.Forge.Name = "Forge"
-        Me.Forge.Size = New System.Drawing.Size(52, 17)
-        Me.Forge.TabIndex = 0
-        Me.Forge.Text = "Forge"
-        Me.Forge.UseVisualStyleBackColor = True
+        Me.Vanilla.AutoSize = True
+        Me.Vanilla.Enabled = False
+        Me.Vanilla.Location = New System.Drawing.Point(359, 31)
+        Me.Vanilla.Name = "Vanilla"
+        Me.Vanilla.Size = New System.Drawing.Size(56, 17)
+        Me.Vanilla.TabIndex = 2
+        Me.Vanilla.Text = "Vanilla"
+        Me.Vanilla.UseVisualStyleBackColor = True
         '
         'Spigot
         '
@@ -661,16 +663,15 @@ Partial Class Edit
         Me.Spigot.Text = "Spigot"
         Me.Spigot.UseVisualStyleBackColor = True
         '
-        'Vanilla
+        'Forge
         '
-        Me.Vanilla.AutoSize = True
-        Me.Vanilla.Enabled = False
-        Me.Vanilla.Location = New System.Drawing.Point(359, 31)
-        Me.Vanilla.Name = "Vanilla"
-        Me.Vanilla.Size = New System.Drawing.Size(56, 17)
-        Me.Vanilla.TabIndex = 2
-        Me.Vanilla.Text = "Vanilla"
-        Me.Vanilla.UseVisualStyleBackColor = True
+        Me.Forge.AutoSize = True
+        Me.Forge.Location = New System.Drawing.Point(149, 31)
+        Me.Forge.Name = "Forge"
+        Me.Forge.Size = New System.Drawing.Size(52, 17)
+        Me.Forge.TabIndex = 0
+        Me.Forge.Text = "Forge"
+        Me.Forge.UseVisualStyleBackColor = True
         '
         'Timer1
         '
@@ -679,7 +680,7 @@ Partial Class Edit
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(158, 127)
+        Me.Label1.Location = New System.Drawing.Point(198, 126)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(88, 13)
         Me.Label1.TabIndex = 185
@@ -687,7 +688,7 @@ Partial Class Edit
         '
         'Button5
         '
-        Me.Button5.Location = New System.Drawing.Point(100, 122)
+        Me.Button5.Location = New System.Drawing.Point(139, 121)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(52, 23)
         Me.Button5.TabIndex = 186

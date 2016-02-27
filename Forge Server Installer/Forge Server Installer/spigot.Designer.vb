@@ -219,6 +219,7 @@ Partial Class spigot
         '
         'Rammb
         '
+        Me.Rammb.Increment = New Decimal(New Integer() {1000, 0, 0, 0})
         Me.Rammb.Location = New System.Drawing.Point(289, 671)
         Me.Rammb.Maximum = New Decimal(New Integer() {16000, 0, 0, 0})
         Me.Rammb.Name = "Rammb"
@@ -792,7 +793,6 @@ Partial Class spigot
         'worldedit
         '
         Me.worldedit.AutoSize = True
-        Me.worldedit.Enabled = False
         Me.worldedit.Location = New System.Drawing.Point(268, 404)
         Me.worldedit.Name = "worldedit"
         Me.worldedit.Size = New System.Drawing.Size(75, 17)

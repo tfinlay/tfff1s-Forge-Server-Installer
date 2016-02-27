@@ -25,9 +25,10 @@
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        Hide()
-        Select_Folder.Show()
-        Close()
+        MsgBox("This Feature is not currently Available")
+        'Hide()
+        'Select_Folder.Show()
+        'Close()
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load

@@ -614,6 +614,7 @@ Partial Class Form2
         '
         'Rammb
         '
+        Me.Rammb.Increment = New Decimal(New Integer() {1000, 0, 0, 0})
         Me.Rammb.Location = New System.Drawing.Point(295, 623)
         Me.Rammb.Maximum = New Decimal(New Integer() {16000, 0, 0, 0})
         Me.Rammb.Name = "Rammb"

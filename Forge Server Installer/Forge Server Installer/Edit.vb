@@ -285,14 +285,38 @@ Installing:
     End Sub
 
     Private Sub Edit_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        Dim tmpHostName As String = System.Net.Dns.GetHostName()
+        Dim myIPaddress = Dns.GetHostByName(tmpHostName).AddressList(0).ToString()
+
+        IPv4.Text = "Your Local Network IP is: " + myIPaddress
+
         path = My.Settings.path
         Label1.Text = "Selected Server: " + path
-        Using sr As New StringReader(My.Settings.path + "\server.properties")
-            Dim currentline As String
-            Dim lineCount As Integer = File.ReadAllLines(path + "\server.properties").Length
+        Dim currentline As String
+        File.Copy(My.Settings.path + "\server.properties", My.Settings.path + "\server.txt")
+        Using sr As StringReader = New StringReader(My.Settings.path + "\server.txt")
+            Dim lineCount As Integer = File.ReadAllLines(path + "\server.txt").Length
 scan:
             currentline = sr.ReadLine()
-            If currentline.Contains("#") Then
+            MsgBox(sr.ReadLine)
+            If currentline = "" Then
+                lineCount = lineCount - 1
+                GoTo scan
+            ElseIf currentline.Contains("#") Then
+                lineCount = lineCount - 1
+                GoTo scan
+            ElseIf Not currentline.Contains("#") Then
+                MsgBox(lineCount)
+                MsgBox(currentline)
+                If currentline.Contains("generator-settings=") Then
+                    worldgen.Text = currentline.Remove(0, 19)
+                ElseIf currentline.Contains("op-permission-level=") Then
+                    oppermlevel.Value = currentline.Remove(0, 20)
+                Else
+                    MsgBox("Nothing on this line?")
+                End If
+
                 lineCount = lineCount - 1
                 GoTo scan
             End If
