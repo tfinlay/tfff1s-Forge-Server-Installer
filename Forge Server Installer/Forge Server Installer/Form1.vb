@@ -34,4 +34,8 @@
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
+
+    Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
+        Process.Start("https://github.com/tfff1OFFICIAL/tfff1s-Forge-Server-Installer/wiki")
+    End Sub
 End Class
