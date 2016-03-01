@@ -271,6 +271,8 @@ Installing:
                         client.DownloadFileAsync(New Uri("http://getspigot.org/spigot/spigot-1.7.9-R0.3-SNAPSHOTBuild1543.jar"), path + "\spigot_server.jar")
                     ElseIf v1710.Checked = True Then
                         client.DownloadFileAsync(New Uri("http://getspigot.org/spigot/spigot-1.7.10-R0.1-SNAPSHOTBuild1646.jar"), path + "\spigot_server.jar")
+                    ElseIf v19.Checked = True Then
+                        client.DownloadFileAsync(New Uri("http://getspigot.org/spigot19/spigot_server.jar"), path + "\spigot_server.jar")
                     End If
 
 
@@ -319,6 +321,8 @@ Installing:
             client.DownloadFileAsync(New Uri("http://dev.bukkit.org/media/files/837/363/worldedit-bukkit-6.0.jar"), path + "\plugins\worldedit-bukkit-6.0.jar")
         ElseIf v1710.Checked = True Then
             client.DownloadFileAsync(New Uri("http://dev.bukkit.org/media/files/837/363/worldedit-bukkit-6.0.jar"), path + "\plugins\worldedit-bukkit-6.0.jar")
+        ElseIf v19.Checked = True Then
+
         End If
 
     End Sub
@@ -402,21 +406,11 @@ Installing:
     End Sub
 
     Private Sub Timer1_Tick_1(sender As Object, e As EventArgs) Handles Timer1.Tick
-        'If v18.Checked = True Then
-        '    clearlagg.Enabled = False
-        '    worldedit.Enabled = True
-        '    plugman.Enabled = True
-        '    essentials.Enabled = True
-        '    multiverse.Enabled = True
-        'ElseIf v172.Checked = True
-        '    multiverse.Enabled = True
-        '    essentials.Enabled = True
-        '    bukkitgui.Enabled = True
-        '    plugman.Enabled = True
-        '    worldedit.Enabled = True
-        '    clearlagg.Enabled = True
-
-        'End If
+        If v19.Checked = True Then
+            worldedit.Enabled = False
+        Else
+            worldedit.Enabled = True
+        End If
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click

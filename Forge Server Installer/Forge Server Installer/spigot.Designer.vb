@@ -100,6 +100,7 @@ Partial Class spigot
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.IPv4 = New System.Windows.Forms.Label()
+        Me.v19 = New System.Windows.Forms.RadioButton()
         Me.GroupBox2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Rammb, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -143,6 +144,7 @@ Partial Class spigot
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.v19)
         Me.GroupBox2.Controls.Add(Me.v1710)
         Me.GroupBox2.Controls.Add(Me.v179)
         Me.GroupBox2.Controls.Add(Me.PictureBox1)
@@ -157,7 +159,7 @@ Partial Class spigot
         'v1710
         '
         Me.v1710.AutoSize = True
-        Me.v1710.Location = New System.Drawing.Point(239, 31)
+        Me.v1710.Location = New System.Drawing.Point(315, 31)
         Me.v1710.Name = "v1710"
         Me.v1710.Size = New System.Drawing.Size(55, 17)
         Me.v1710.TabIndex = 123
@@ -168,7 +170,7 @@ Partial Class spigot
         'v179
         '
         Me.v179.AutoSize = True
-        Me.v179.Location = New System.Drawing.Point(469, 31)
+        Me.v179.Location = New System.Drawing.Point(489, 31)
         Me.v179.Name = "v179"
         Me.v179.Size = New System.Drawing.Size(49, 17)
         Me.v179.TabIndex = 122
@@ -189,7 +191,7 @@ Partial Class spigot
         'v175
         '
         Me.v175.AutoSize = True
-        Me.v175.Location = New System.Drawing.Point(352, 31)
+        Me.v175.Location = New System.Drawing.Point(407, 31)
         Me.v175.Name = "v175"
         Me.v175.Size = New System.Drawing.Size(49, 17)
         Me.v175.TabIndex = 2
@@ -200,7 +202,7 @@ Partial Class spigot
         '
         Me.v18.AutoSize = True
         Me.v18.Checked = True
-        Me.v18.Location = New System.Drawing.Point(155, 31)
+        Me.v18.Location = New System.Drawing.Point(229, 31)
         Me.v18.Name = "v18"
         Me.v18.Size = New System.Drawing.Size(49, 17)
         Me.v18.TabIndex = 0
@@ -768,8 +770,6 @@ Partial Class spigot
         'bukkitgui
         '
         Me.bukkitgui.AutoSize = True
-        Me.bukkitgui.Checked = True
-        Me.bukkitgui.CheckState = System.Windows.Forms.CheckState.Checked
         Me.bukkitgui.Location = New System.Drawing.Point(428, 381)
         Me.bukkitgui.Name = "bukkitgui"
         Me.bukkitgui.Size = New System.Drawing.Size(170, 17)
@@ -839,6 +839,17 @@ Partial Class spigot
         Me.IPv4.Size = New System.Drawing.Size(211, 13)
         Me.IPv4.TabIndex = 122
         Me.IPv4.Text = "Your Local Network IP is: 192.192.192.192"
+        '
+        'v19
+        '
+        Me.v19.AutoSize = True
+        Me.v19.Location = New System.Drawing.Point(155, 31)
+        Me.v19.Name = "v19"
+        Me.v19.Size = New System.Drawing.Size(40, 17)
+        Me.v19.TabIndex = 124
+        Me.v19.TabStop = True
+        Me.v19.Text = "1.9"
+        Me.v19.UseVisualStyleBackColor = True
         '
         'spigot
         '
@@ -1004,4 +1015,5 @@ Partial Class spigot
     Friend WithEvents v179 As RadioButton
     Friend WithEvents Button6 As Button
     Friend WithEvents IPv4 As Label
+    Friend WithEvents v19 As RadioButton
 End Class
