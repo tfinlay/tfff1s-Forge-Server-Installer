@@ -32,7 +32,8 @@ Public Class Edit
     Public jarTitle As String
     Private Async Sub installbutton_Click(sender As Object, e As EventArgs) Handles installbutton.Click
 Checking:
-        If CheckBox1.Checked = True Then
+        If Not CheckBox1.Checked = True Then
+            MsgBox("You must have read and agreed to the Minecraft EULA Before Continuing")
         Else
             Dim result As Integer = MessageBox.Show("Are you sure you want to continue?", "Are you sure?", MessageBoxButtons.YesNo)
             If result = DialogResult.No Then
@@ -201,7 +202,7 @@ Installing:
                 sb.AppendLine("view-distance=" & viewdist)
                 sb.AppendLine("motd=" & motd)
 
-                Using outfile As StreamWriter = New StreamWriter(path + "\server.properties", True)
+                Using outfile As StreamWriter = New StreamWriter(path + "\server.properties", False)
                     Await outfile.WriteAsync(sb.ToString())
                 End Using
 
@@ -212,7 +213,7 @@ Installing:
                 sb2.AppendLine("#" & currentdate)
                 sb2.AppendLine("eula=true")
 
-                Using outeula As StreamWriter = New StreamWriter(path + "\eula.txt", True)
+                Using outeula As StreamWriter = New StreamWriter(path + "\eula.txt", False)
                     Await outeula.WriteAsync(sb2.ToString())
                 End Using
 
@@ -242,21 +243,30 @@ Installing:
                 sb3.AppendLine("echo server has either stopped or crashed.")
                 sb3.AppendLine("pause")
 
-                Using outstart As StreamWriter = New StreamWriter(path + "\start.cmd", True)
+                Using outstart As StreamWriter = New StreamWriter(path + "\start.cmd", False)
                     Await outstart.WriteAsync(sb3.ToString())
                 End Using
 
                 'check if a mod folder has been selected. If so copy it's contents to mods folder in server.
-                If pathtext2.TextLength > 0 Then
-                    If Forge.Checked = True Then
-                        My.Computer.FileSystem.CopyDirectory(pathtext2.Text, path + "\mods")
-                    ElseIf Spigot.checked = True Then
-                        My.Computer.FileSystem.CopyDirectory(pathtext2.Text, path + "\plugins")
+                Try
+                    If pathtext2.TextLength > 0 Then
+                        If Forge.Checked = True Then
+                            My.Computer.FileSystem.CopyDirectory(pathtext2.Text, path + "\mods")
+                        ElseIf Spigot.checked = True Then
+                            My.Computer.FileSystem.CopyDirectory(pathtext2.Text, path + "\plugins")
+                        End If
+                    Else
+                        'MessageBox.Show("To continue with installation you must have read and agreed to the Minecraft EULA")
                     End If
-                Else
-                    MessageBox.Show("To continue with installation you must have read and agreed to the Minecraft EULA")
-                End If
+                Catch
+                    MsgBox("An Error Ocurred when copying your mods/plugins folder.")
+                End Try
             End If
+            Hide()
+            My.Settings.installdirectory = My.Settings.path
+            My.Settings.Save()
+            done.Show()
+            Close()
         End If
     End Sub
 
@@ -285,43 +295,8 @@ Installing:
     End Sub
 
     Private Sub Edit_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Call LoadManager()
 
-        Dim tmpHostName As String = System.Net.Dns.GetHostName()
-        Dim myIPaddress = Dns.GetHostByName(tmpHostName).AddressList(0).ToString()
-
-        IPv4.Text = "Your Local Network IP is: " + myIPaddress
-
-        path = My.Settings.path
-        Label1.Text = "Selected Server: " + path
-        Dim currentline As String
-        File.Copy(My.Settings.path + "\server.properties", My.Settings.path + "\server.txt")
-        Using sr As StringReader = New StringReader(My.Settings.path + "\server.txt")
-            Dim lineCount As Integer = File.ReadAllLines(path + "\server.txt").Length
-scan:
-            currentline = sr.ReadLine()
-            MsgBox(sr.ReadLine)
-            If currentline = "" Then
-                lineCount = lineCount - 1
-                GoTo scan
-            ElseIf currentline.Contains("#") Then
-                lineCount = lineCount - 1
-                GoTo scan
-            ElseIf Not currentline.Contains("#") Then
-                MsgBox(lineCount)
-                MsgBox(currentline)
-                If currentline.Contains("generator-settings=") Then
-                    worldgen.Text = currentline.Remove(0, 19)
-                ElseIf currentline.Contains("op-permission-level=") Then
-                    oppermlevel.Value = currentline.Remove(0, 20)
-                Else
-                    MsgBox("Nothing on this line?")
-                End If
-
-                lineCount = lineCount - 1
-                GoTo scan
-            End If
-
-        End Using
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
@@ -332,5 +307,162 @@ scan:
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
         Process.Start("https://github.com/tfff1OFFICIAL/tfff1s-Forge-Server-Installer/wiki/Local-IP-Address-%28IPv4%29")
+    End Sub
+
+    Public Sub LoadManager()
+        'Load IP Address:
+        Dim tmpHostName As String = System.Net.Dns.GetHostName()
+        Dim myIPaddress = Dns.GetHostByName(tmpHostName).AddressList(0).ToString()
+
+        IPv4.Text = "Your Local Network IP is: " + myIPaddress
+
+        'Get Server Properties:
+        path = My.Settings.path
+        Label1.Text = "Selected Server: " + path
+        Dim currentline As String
+        Try
+            Dim linecount As Integer = File.ReadAllLines(path + "\server.properties").Count
+            Using sr As StreamReader = File.OpenText(path + "\server.properties")
+Scan:
+                If Not linecount > 0 Then
+                    GoTo FinishedRead
+                    MsgBox("Finished Scanning server.properties")
+                End If
+                'Read The Next Line:
+                currentline = sr.ReadLine.ToString
+                'Check if it's commented:
+                If currentline.ToString.Contains("#") Then
+                    linecount = linecount - 1
+                    'MsgBox("Contains #")
+                    GoTo Scan
+                End If
+
+                'Start Looking for information:
+                'MsgBox("No # in this line: " + currentline)
+                If currentline.Contains("generator-settings=") Then
+                    'look for: generator-settings=
+                    worldgen.Text = currentline.Remove(0, 19)
+                    GoTo FinishedLine
+                ElseIf currentline.Contains("op-permission-level=") Then
+                    oppermlevel.Value = currentline.Remove(0, 20)
+                    GoTo FinishedLine
+                ElseIf currentline.Contains("allow-nether=") Then
+                    nether.Checked = currentline.Remove(0, 13)
+                    GoTo FinishedLine
+                ElseIf currentline.Contains("level-name=") Then
+                    GoTo FinishedLine
+                ElseIf currentline.Contains("enable-query=") Then
+                    GoTo FinishedLine
+                ElseIf currentline.Contains("allow-flight=") Then
+                    flight.Checked = currentline.Remove(0, 13)
+                    GoTo FinishedLine
+                ElseIf currentline.Contains("announce-player-achievements=") Then
+                    playerachievements.Checked = currentline.Remove(0, 29)
+                    GoTo FinishedLine
+                ElseIf currentline.Contains("server-port=") Then
+                    port.Value = currentline.Remove(0, 12)
+                    GoTo FinishedLine
+                ElseIf currentline.Contains("max-world-size=") Then
+                    GoTo FinishedLine
+                ElseIf currentline.Contains("level-type=") Then
+                    GoTo FinishedLine
+                ElseIf currentline.Contains("enable-rcon=") Then
+                    GoTo FinishedLine
+                ElseIf currentline.Contains("force-gamemode=") Then
+                    forcegm.Checked = currentline.Remove(0, 15)
+                    GoTo FinishedLine
+                ElseIf currentline.Contains("level-seed=") Then
+                    seed.Text = currentline.Remove(0, 11)
+                    GoTo FinishedLine
+                ElseIf currentline.Contains("server-ip=") Then
+                    iptext.Text = currentline.Remove(0, 10)
+                    GoTo FinishedLine
+                ElseIf currentline.Contains("network-compression-threshold=") Then
+                    GoTo FinishedLine
+                ElseIf currentline.Contains("max-build-height=") Then
+                    GoTo FinishedLine
+                ElseIf currentline.Contains("spawn-npcs=") Then
+                    npcs.Checked = currentline.Remove(0, 11)
+                    GoTo FinishedLine
+                ElseIf currentline.Contains("white-list=") Then
+                    GoTo FinishedLine
+                ElseIf currentline.Contains("spawn-animals=") Then
+                    animals.Checked = currentline.Remove(0, 14)
+                    GoTo FinishedLine
+                ElseIf currentline.Contains("snooper-enabled=") Then
+                    snooper.Checked = currentline.Remove(0, 16)
+                    GoTo FinishedLine
+                ElseIf currentline.Contains("hardcore=") Then
+                    hardcore.Checked = currentline.Remove(0, 9)
+                    GoTo FinishedLine
+                ElseIf currentline.Contains("online-mode=") Then
+                    online.Checked = currentline.Remove(0, 12)
+                    GoTo FinishedLine
+                ElseIf currentline.Contains("pvp=") Then
+                    pvp.Checked = currentline.Remove(0, 4)
+                    GoTo FinishedLine
+                ElseIf currentline.Contains("difficulty=") Then
+                    If currentline.Contains("0") Then
+                        Peaceful.Checked = True
+                    ElseIf currentline.Contains("1") Then
+                        Easy.Checked = True
+                    ElseIf currentline.Contains("2") Then
+                        Normal.Checked = True
+                    ElseIf currentline.Contains("3") Then
+                        Hard.Checked = True
+                    Else
+                        MsgBox("Failed to find valid difficulty value. Setting to default")
+                        Easy.Checked = True
+                    End If
+                    GoTo FinishedLine
+                ElseIf currentline.Contains("enable-command-block=") Then
+                    commandblocks.Checked = currentline.Remove(0, 21)
+                    GoTo FinishedLine
+                ElseIf currentline.Contains("player-idle-timeout=") Then
+                    GoTo FinishedLine
+                ElseIf currentline.Contains("gamemode=") Then
+                    If currentline.Contains("2") Then
+                        Adventure.Checked = True
+                    ElseIf currentline.Contains("0") Then
+                        Survival.Checked = True
+                    ElseIf currentline.Contains("1") Then
+                        Creative.Checked = True
+                    ElseIf currentline.Contains("3") Then
+                        MsgBox("Spectator gamemode is not yet supported in tfff1's Server Installer. Will revert to survival.")
+                        Survival.Checked = True
+                    Else
+                        MsgBox("Unrecognised value for gamemode. Reverting to survival")
+                        Survival.Checked = True
+                    End If
+                    GoTo FinishedLine
+                ElseIf currentline.Contains("max-players=") Then
+                    MaxPlayers.Value = currentline.Remove(0, 12)
+                    GoTo FinishedLine
+                ElseIf currentline.Contains("spawn-monsters=") Then
+                    monsters.Checked = currentline.Remove(0, 15)
+                    GoTo FinishedLine
+                ElseIf currentline.Contains("view-distance=") Then
+                    viewdistance.Value = currentline.Remove(0, 14)
+                    GoTo FinishedLine
+                ElseIf currentline.Contains("generate-structures=") Then
+                    structures.Checked = currentline.Remove(0, 20)
+                    GoTo FinishedLine
+                ElseIf currentline.Contains("motd=") Then
+                    message.Text = currentline.Remove(0, 5)
+                    GoTo FinishedLine
+                Else
+                        MsgBox("This line (" + currentline.ToString + ") contains an unrecognised string")
+                    GoTo FinishedLine
+                End If
+FinishedLine:
+                linecount = linecount - 1
+                GoTo Scan
+            End Using
+        Catch
+            MsgBox("An Error Ocurred when reading server.properties")
+        End Try
+
+FinishedRead:
+        MsgBox("Finished Reading from server.properties")
     End Sub
 End Class

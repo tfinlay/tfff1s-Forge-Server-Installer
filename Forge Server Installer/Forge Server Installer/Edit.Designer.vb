@@ -96,6 +96,7 @@ Partial Class Edit
         '
         'Button6
         '
+        Me.Button6.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.Button6.Location = New System.Drawing.Point(368, 186)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(111, 23)
@@ -259,8 +260,6 @@ Partial Class Edit
         'nether
         '
         Me.nether.AutoSize = True
-        Me.nether.Checked = True
-        Me.nether.CheckState = System.Windows.Forms.CheckState.Checked
         Me.nether.Location = New System.Drawing.Point(433, 467)
         Me.nether.Name = "nether"
         Me.nether.Size = New System.Drawing.Size(84, 17)
@@ -401,8 +400,6 @@ Partial Class Edit
         'structures
         '
         Me.structures.AutoSize = True
-        Me.structures.Checked = True
-        Me.structures.CheckState = System.Windows.Forms.CheckState.Checked
         Me.structures.Location = New System.Drawing.Point(433, 375)
         Me.structures.Name = "structures"
         Me.structures.Size = New System.Drawing.Size(121, 17)
@@ -413,8 +410,6 @@ Partial Class Edit
         'pvp
         '
         Me.pvp.AutoSize = True
-        Me.pvp.Checked = True
-        Me.pvp.CheckState = System.Windows.Forms.CheckState.Checked
         Me.pvp.Location = New System.Drawing.Point(247, 421)
         Me.pvp.Name = "pvp"
         Me.pvp.Size = New System.Drawing.Size(46, 17)
@@ -435,8 +430,6 @@ Partial Class Edit
         'monsters
         '
         Me.monsters.AutoSize = True
-        Me.monsters.Checked = True
-        Me.monsters.CheckState = System.Windows.Forms.CheckState.Checked
         Me.monsters.Location = New System.Drawing.Point(247, 467)
         Me.monsters.Name = "monsters"
         Me.monsters.Size = New System.Drawing.Size(175, 17)
@@ -447,8 +440,6 @@ Partial Class Edit
         'snooper
         '
         Me.snooper.AutoSize = True
-        Me.snooper.Checked = True
-        Me.snooper.CheckState = System.Windows.Forms.CheckState.Checked
         Me.snooper.Location = New System.Drawing.Point(247, 375)
         Me.snooper.Name = "snooper"
         Me.snooper.Size = New System.Drawing.Size(108, 17)
@@ -459,8 +450,6 @@ Partial Class Edit
         'online
         '
         Me.online.AutoSize = True
-        Me.online.Checked = True
-        Me.online.CheckState = System.Windows.Forms.CheckState.Checked
         Me.online.Location = New System.Drawing.Point(247, 398)
         Me.online.Name = "online"
         Me.online.Size = New System.Drawing.Size(86, 17)
@@ -481,8 +470,6 @@ Partial Class Edit
         'npcs
         '
         Me.npcs.AutoSize = True
-        Me.npcs.Checked = True
-        Me.npcs.CheckState = System.Windows.Forms.CheckState.Checked
         Me.npcs.Location = New System.Drawing.Point(35, 421)
         Me.npcs.Name = "npcs"
         Me.npcs.Size = New System.Drawing.Size(156, 17)
@@ -493,8 +480,6 @@ Partial Class Edit
         'animals
         '
         Me.animals.AutoSize = True
-        Me.animals.Checked = True
-        Me.animals.CheckState = System.Windows.Forms.CheckState.Checked
         Me.animals.Location = New System.Drawing.Point(35, 444)
         Me.animals.Name = "animals"
         Me.animals.Size = New System.Drawing.Size(98, 17)
@@ -515,8 +500,6 @@ Partial Class Edit
         'playerachievements
         '
         Me.playerachievements.AutoSize = True
-        Me.playerachievements.Checked = True
-        Me.playerachievements.CheckState = System.Windows.Forms.CheckState.Checked
         Me.playerachievements.Location = New System.Drawing.Point(35, 375)
         Me.playerachievements.Name = "playerachievements"
         Me.playerachievements.Size = New System.Drawing.Size(171, 17)
@@ -697,8 +680,10 @@ Partial Class Edit
         '
         'Edit
         '
+        Me.AcceptButton = Me.installbutton
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.CancelButton = Me.Button1
         Me.ClientSize = New System.Drawing.Size(1230, 737)
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Label1)
