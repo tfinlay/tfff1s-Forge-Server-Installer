@@ -1,0 +1,18 @@
+C:\Users\Thomas Finlay\Source\Repos\tfff1s-Forge-Server-Installer\Forge Server Installer\Forge Server Installer\bin\Release\Forge Server Installer.exe.config
+C:\Users\Thomas Finlay\Source\Repos\tfff1s-Forge-Server-Installer\Forge Server Installer\Forge Server Installer\bin\Release\Forge Server Installer.exe
+C:\Users\Thomas Finlay\Source\Repos\tfff1s-Forge-Server-Installer\Forge Server Installer\Forge Server Installer\bin\Release\Forge Server Installer.pdb
+C:\Users\Thomas Finlay\Source\Repos\tfff1s-Forge-Server-Installer\Forge Server Installer\Forge Server Installer\bin\Release\Forge Server Installer.xml
+C:\Users\Thomas Finlay\Source\Repos\tfff1s-Forge-Server-Installer\Forge Server Installer\Forge Server Installer\obj\Release\Forge Server Installer.vbprojResolveAssemblyReference.cache
+C:\Users\Thomas Finlay\Source\Repos\tfff1s-Forge-Server-Installer\Forge Server Installer\Forge Server Installer\obj\Release\Forge_Server_Installer.done.resources
+C:\Users\Thomas Finlay\Source\Repos\tfff1s-Forge-Server-Installer\Forge Server Installer\Forge Server Installer\obj\Release\Forge_Server_Installer.Edit.resources
+C:\Users\Thomas Finlay\Source\Repos\tfff1s-Forge-Server-Installer\Forge Server Installer\Forge Server Installer\obj\Release\Forge_Server_Installer.Form1.resources
+C:\Users\Thomas Finlay\Source\Repos\tfff1s-Forge-Server-Installer\Forge Server Installer\Forge Server Installer\obj\Release\Forge_Server_Installer.Form2.resources
+C:\Users\Thomas Finlay\Source\Repos\tfff1s-Forge-Server-Installer\Forge Server Installer\Forge Server Installer\obj\Release\Forge_Server_Installer.LoginForm1.resources
+C:\Users\Thomas Finlay\Source\Repos\tfff1s-Forge-Server-Installer\Forge Server Installer\Forge Server Installer\obj\Release\Forge_Server_Installer.Resources.resources
+C:\Users\Thomas Finlay\Source\Repos\tfff1s-Forge-Server-Installer\Forge Server Installer\Forge Server Installer\obj\Release\Forge_Server_Installer.Select_Folder.resources
+C:\Users\Thomas Finlay\Source\Repos\tfff1s-Forge-Server-Installer\Forge Server Installer\Forge Server Installer\obj\Release\Forge_Server_Installer.spigot.resources
+C:\Users\Thomas Finlay\Source\Repos\tfff1s-Forge-Server-Installer\Forge Server Installer\Forge Server Installer\obj\Release\Forge_Server_Installer.SplashScreen1.resources
+C:\Users\Thomas Finlay\Source\Repos\tfff1s-Forge-Server-Installer\Forge Server Installer\Forge Server Installer\obj\Release\Forge Server Installer.vbproj.GenerateResource.Cache
+C:\Users\Thomas Finlay\Source\Repos\tfff1s-Forge-Server-Installer\Forge Server Installer\Forge Server Installer\obj\Release\Forge Server Installer.exe
+C:\Users\Thomas Finlay\Source\Repos\tfff1s-Forge-Server-Installer\Forge Server Installer\Forge Server Installer\obj\Release\Forge Server Installer.xml
+C:\Users\Thomas Finlay\Source\Repos\tfff1s-Forge-Server-Installer\Forge Server Installer\Forge Server Installer\obj\Release\Forge Server Installer.pdb
