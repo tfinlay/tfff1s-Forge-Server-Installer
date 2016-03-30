@@ -16,3 +16,9 @@ C:\Users\Thomas Finlay\Source\Repos\tfff1s-Forge-Server-Installer\Forge Server I
 C:\Users\Thomas Finlay\Source\Repos\tfff1s-Forge-Server-Installer\Forge Server Installer\Forge Server Installer\obj\Release\Forge Server Installer.exe
 C:\Users\Thomas Finlay\Source\Repos\tfff1s-Forge-Server-Installer\Forge Server Installer\Forge Server Installer\obj\Release\Forge Server Installer.xml
 C:\Users\Thomas Finlay\Source\Repos\tfff1s-Forge-Server-Installer\Forge Server Installer\Forge Server Installer\obj\Release\Forge Server Installer.pdb
+C:\Users\Thomas Finlay\Source\Repos\tfff1s-Forge-Server-Installer\Forge Server Installer\Forge Server Installer\bin\Release\Forge Server Installer.exe.manifest
+C:\Users\Thomas Finlay\Source\Repos\tfff1s-Forge-Server-Installer\Forge Server Installer\Forge Server Installer\bin\Release\Forge Server Installer.application
+C:\Users\Thomas Finlay\Source\Repos\tfff1s-Forge-Server-Installer\Forge Server Installer\Forge Server Installer\obj\Release\Forge Server Installer.TrustInfo.xml
+C:\Users\Thomas Finlay\Source\Repos\tfff1s-Forge-Server-Installer\Forge Server Installer\Forge Server Installer\obj\Release\Forge Server Installer.exe.manifest
+C:\Users\Thomas Finlay\Source\Repos\tfff1s-Forge-Server-Installer\Forge Server Installer\Forge Server Installer\obj\Release\Forge Server Installer.application
+C:\Users\Thomas Finlay\Source\Repos\tfff1s-Forge-Server-Installer\Forge Server Installer\Forge Server Installer\obj\Release\Forge_Server_Installer.Options.resources

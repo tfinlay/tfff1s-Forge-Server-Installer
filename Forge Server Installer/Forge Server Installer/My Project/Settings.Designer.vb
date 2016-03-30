@@ -101,6 +101,18 @@ Namespace My
                 Me("path") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property updateCheck() As Boolean
+            Get
+                Return CType(Me("updateCheck"),Boolean)
+            End Get
+            Set
+                Me("updateCheck") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

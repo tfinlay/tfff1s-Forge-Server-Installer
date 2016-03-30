@@ -31,10 +31,13 @@ Partial Class Form1
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.orLabel = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.updates = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Button4 = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -104,15 +107,15 @@ Partial Class Form1
         Me.PictureBox2.TabIndex = 5
         Me.PictureBox2.TabStop = False
         '
-        'Label1
+        'orLabel
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(304, 76)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(31, 24)
-        Me.Label1.TabIndex = 6
-        Me.Label1.Text = "Or"
+        Me.orLabel.AutoSize = True
+        Me.orLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.orLabel.Location = New System.Drawing.Point(304, 76)
+        Me.orLabel.Name = "orLabel"
+        Me.orLabel.Size = New System.Drawing.Size(31, 24)
+        Me.orLabel.TabIndex = 6
+        Me.orLabel.Text = "Or"
         '
         'Label2
         '
@@ -144,6 +147,33 @@ Partial Class Form1
         Me.PictureBox3.TabIndex = 9
         Me.PictureBox3.TabStop = False
         '
+        'updates
+        '
+        Me.updates.AutoSize = True
+        Me.updates.Location = New System.Drawing.Point(13, 352)
+        Me.updates.Name = "updates"
+        Me.updates.Size = New System.Drawing.Size(106, 13)
+        Me.updates.TabIndex = 10
+        Me.updates.Text = "Auto-Update Status: "
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(126, 352)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(39, 13)
+        Me.Label1.TabIndex = 11
+        Me.Label1.Text = "Label1"
+        '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(12, 12)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(75, 23)
+        Me.Button4.TabIndex = 12
+        Me.Button4.Text = "Options"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -151,10 +181,13 @@ Partial Class Form1
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(671, 377)
+        Me.Controls.Add(Me.Button4)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.updates)
         Me.Controls.Add(Me.PictureBox3)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.orLabel)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.forge)
@@ -181,8 +214,11 @@ Partial Class Form1
     Friend WithEvents ToolTip1 As ToolTip
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents Label1 As Label
+    Friend WithEvents orLabel As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Button3 As Button
     Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents updates As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Button4 As Button
 End Class
