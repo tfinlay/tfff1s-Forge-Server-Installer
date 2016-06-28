@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Forge Server Installer.exe" size="2836456">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Forge Server Installer.exe" size="2836968">
       <assemblyIdentity name="Forge Server Installer" version="1.6.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>xB7NjOMwV1EnzwPFYZGymVBJ20ic3KXxX7hXeAkxBz8=</dsig:DigestValue>
+        <dsig:DigestValue>Cd0raoPc8xn6eKiihTtTQd1GYCzbpVIEs4kA8VJH9zk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

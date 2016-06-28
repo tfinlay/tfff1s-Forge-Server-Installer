@@ -96,6 +96,8 @@ Partial Class Form2
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.IPv4 = New System.Windows.Forms.Label()
         Me.Button6 = New System.Windows.Forms.Button()
+        Me.v19 = New System.Windows.Forms.RadioButton()
+        Me.v194 = New System.Windows.Forms.RadioButton()
         CType(Me.MaxPlayers, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.viewdistance, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.oppermlevel, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -633,6 +635,8 @@ Partial Class Form2
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.v194)
+        Me.GroupBox2.Controls.Add(Me.v19)
         Me.GroupBox2.Controls.Add(Me.PictureBox1)
         Me.GroupBox2.Controls.Add(Me.v152)
         Me.GroupBox2.Controls.Add(Me.v162)
@@ -660,7 +664,7 @@ Partial Class Form2
         'v152
         '
         Me.v152.AutoSize = True
-        Me.v152.Location = New System.Drawing.Point(378, 19)
+        Me.v152.Location = New System.Drawing.Point(484, 25)
         Me.v152.Name = "v152"
         Me.v152.Size = New System.Drawing.Size(49, 17)
         Me.v152.TabIndex = 6
@@ -670,7 +674,7 @@ Partial Class Form2
         'v162
         '
         Me.v162.AutoSize = True
-        Me.v162.Location = New System.Drawing.Point(344, 42)
+        Me.v162.Location = New System.Drawing.Point(450, 48)
         Me.v162.Name = "v162"
         Me.v162.Size = New System.Drawing.Size(49, 17)
         Me.v162.TabIndex = 5
@@ -680,7 +684,7 @@ Partial Class Form2
         'v164
         '
         Me.v164.AutoSize = True
-        Me.v164.Location = New System.Drawing.Point(308, 19)
+        Me.v164.Location = New System.Drawing.Point(414, 25)
         Me.v164.Name = "v164"
         Me.v164.Size = New System.Drawing.Size(49, 17)
         Me.v164.TabIndex = 4
@@ -690,7 +694,7 @@ Partial Class Form2
         'v188
         '
         Me.v188.AutoSize = True
-        Me.v188.Location = New System.Drawing.Point(172, 19)
+        Me.v188.Location = New System.Drawing.Point(278, 25)
         Me.v188.Name = "v188"
         Me.v188.Size = New System.Drawing.Size(49, 17)
         Me.v188.TabIndex = 3
@@ -700,7 +704,7 @@ Partial Class Form2
         'v172
         '
         Me.v172.AutoSize = True
-        Me.v172.Location = New System.Drawing.Point(270, 42)
+        Me.v172.Location = New System.Drawing.Point(376, 48)
         Me.v172.Name = "v172"
         Me.v172.Size = New System.Drawing.Size(49, 17)
         Me.v172.TabIndex = 2
@@ -711,7 +715,7 @@ Partial Class Form2
         '
         Me.v1710.AutoSize = True
         Me.v1710.Checked = True
-        Me.v1710.Location = New System.Drawing.Point(236, 19)
+        Me.v1710.Location = New System.Drawing.Point(342, 25)
         Me.v1710.Name = "v1710"
         Me.v1710.Size = New System.Drawing.Size(55, 17)
         Me.v1710.TabIndex = 1
@@ -722,7 +726,7 @@ Partial Class Form2
         'v18
         '
         Me.v18.AutoSize = True
-        Me.v18.Location = New System.Drawing.Point(209, 42)
+        Me.v18.Location = New System.Drawing.Point(315, 48)
         Me.v18.Name = "v18"
         Me.v18.Size = New System.Drawing.Size(40, 17)
         Me.v18.TabIndex = 0
@@ -790,6 +794,28 @@ Partial Class Form2
         Me.Button6.TabIndex = 62
         Me.Button6.Text = "What is this?"
         Me.Button6.UseVisualStyleBackColor = True
+        '
+        'v19
+        '
+        Me.v19.AutoSize = True
+        Me.v19.Location = New System.Drawing.Point(255, 48)
+        Me.v19.Name = "v19"
+        Me.v19.Size = New System.Drawing.Size(40, 17)
+        Me.v19.TabIndex = 10
+        Me.v19.TabStop = True
+        Me.v19.Text = "1.9"
+        Me.v19.UseVisualStyleBackColor = True
+        '
+        'v194
+        '
+        Me.v194.AutoSize = True
+        Me.v194.Location = New System.Drawing.Point(214, 25)
+        Me.v194.Name = "v194"
+        Me.v194.Size = New System.Drawing.Size(49, 17)
+        Me.v194.TabIndex = 11
+        Me.v194.TabStop = True
+        Me.v194.Text = "1.9.4"
+        Me.v194.UseVisualStyleBackColor = True
         '
         'Form2
         '
@@ -947,4 +973,6 @@ Partial Class Form2
     Friend WithEvents Timer2 As Timer
     Friend WithEvents IPv4 As Label
     Friend WithEvents Button6 As Button
+    Friend WithEvents v194 As RadioButton
+    Friend WithEvents v19 As RadioButton
 End Class

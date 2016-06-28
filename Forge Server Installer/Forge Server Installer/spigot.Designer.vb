@@ -28,6 +28,7 @@ Partial Class spigot
         Me.Survival = New System.Windows.Forms.RadioButton()
         Me.Adventure = New System.Windows.Forms.RadioButton()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.v19 = New System.Windows.Forms.RadioButton()
         Me.v1710 = New System.Windows.Forms.RadioButton()
         Me.v179 = New System.Windows.Forms.RadioButton()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -100,7 +101,7 @@ Partial Class spigot
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.IPv4 = New System.Windows.Forms.Label()
-        Me.v19 = New System.Windows.Forms.RadioButton()
+        Me.v194 = New System.Windows.Forms.RadioButton()
         Me.GroupBox2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Rammb, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -144,6 +145,7 @@ Partial Class spigot
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.v194)
         Me.GroupBox2.Controls.Add(Me.v19)
         Me.GroupBox2.Controls.Add(Me.v1710)
         Me.GroupBox2.Controls.Add(Me.v179)
@@ -156,10 +158,21 @@ Partial Class spigot
         Me.GroupBox2.TabIndex = 110
         Me.GroupBox2.TabStop = False
         '
+        'v19
+        '
+        Me.v19.AutoSize = True
+        Me.v19.Location = New System.Drawing.Point(269, 31)
+        Me.v19.Name = "v19"
+        Me.v19.Size = New System.Drawing.Size(40, 17)
+        Me.v19.TabIndex = 124
+        Me.v19.TabStop = True
+        Me.v19.Text = "1.9"
+        Me.v19.UseVisualStyleBackColor = True
+        '
         'v1710
         '
         Me.v1710.AutoSize = True
-        Me.v1710.Location = New System.Drawing.Point(315, 31)
+        Me.v1710.Location = New System.Drawing.Point(372, 31)
         Me.v1710.Name = "v1710"
         Me.v1710.Size = New System.Drawing.Size(55, 17)
         Me.v1710.TabIndex = 123
@@ -191,7 +204,7 @@ Partial Class spigot
         'v175
         '
         Me.v175.AutoSize = True
-        Me.v175.Location = New System.Drawing.Point(407, 31)
+        Me.v175.Location = New System.Drawing.Point(433, 31)
         Me.v175.Name = "v175"
         Me.v175.Size = New System.Drawing.Size(49, 17)
         Me.v175.TabIndex = 2
@@ -202,7 +215,7 @@ Partial Class spigot
         '
         Me.v18.AutoSize = True
         Me.v18.Checked = True
-        Me.v18.Location = New System.Drawing.Point(229, 31)
+        Me.v18.Location = New System.Drawing.Point(315, 31)
         Me.v18.Name = "v18"
         Me.v18.Size = New System.Drawing.Size(49, 17)
         Me.v18.TabIndex = 0
@@ -840,16 +853,16 @@ Partial Class spigot
         Me.IPv4.TabIndex = 122
         Me.IPv4.Text = "Your Local Network IP is: 192.192.192.192"
         '
-        'v19
+        'v194
         '
-        Me.v19.AutoSize = True
-        Me.v19.Location = New System.Drawing.Point(155, 31)
-        Me.v19.Name = "v19"
-        Me.v19.Size = New System.Drawing.Size(40, 17)
-        Me.v19.TabIndex = 124
-        Me.v19.TabStop = True
-        Me.v19.Text = "1.9"
-        Me.v19.UseVisualStyleBackColor = True
+        Me.v194.AutoSize = True
+        Me.v194.Location = New System.Drawing.Point(214, 31)
+        Me.v194.Name = "v194"
+        Me.v194.Size = New System.Drawing.Size(49, 17)
+        Me.v194.TabIndex = 125
+        Me.v194.TabStop = True
+        Me.v194.Text = "1.9.4"
+        Me.v194.UseVisualStyleBackColor = True
         '
         'spigot
         '
@@ -1016,4 +1029,5 @@ Partial Class spigot
     Friend WithEvents Button6 As Button
     Friend WithEvents IPv4 As Label
     Friend WithEvents v19 As RadioButton
+    Friend WithEvents v194 As RadioButton
 End Class

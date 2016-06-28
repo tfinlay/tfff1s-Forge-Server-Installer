@@ -272,7 +272,9 @@ Installing:
                     ElseIf v1710.Checked = True Then
                         client.DownloadFileAsync(New Uri("http://getspigot.org/spigot/spigot-1.7.10-R0.1-SNAPSHOTBuild1646.jar"), path + "\spigot_server.jar")
                     ElseIf v19.Checked = True Then
-                        client.DownloadFileAsync(New Uri("http://getspigot.org/spigot19/spigot_server.jar"), path + "\spigot_server.jar")
+                        client.DownloadFileAsync(New Uri("https://ci.mcadmin.net/job/Spigot/46/artifact/spigot-1.9.jar"), path + "\spigot_server.jar")
+                    ElseIf v194.Checked = True Then
+                        client.DownloadFileAsync(New Uri("https://ci.mcadmin.net/job/Spigot/68/artifact/spigot-1.9.4.jar"), path + "\spigot_server.jar")
                     End If
 
 
@@ -322,6 +324,8 @@ Installing:
         ElseIf v1710.Checked = True Then
             client.DownloadFileAsync(New Uri("http://dev.bukkit.org/media/files/837/363/worldedit-bukkit-6.0.jar"), path + "\plugins\worldedit-bukkit-6.0.jar")
         ElseIf v19.Checked = True Then
+
+        ElseIf v194.Checked = True Then
 
         End If
 
@@ -406,7 +410,7 @@ Installing:
     End Sub
 
     Private Sub Timer1_Tick_1(sender As Object, e As EventArgs) Handles Timer1.Tick
-        If v19.Checked = True Then
+        If v19.Checked = True Or v194.Checked = True Then
             worldedit.Enabled = False
         Else
             worldedit.Enabled = True

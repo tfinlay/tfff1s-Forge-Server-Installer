@@ -268,6 +268,10 @@ Installing:
                         jarTitle = "minecraftforge-universal-1.6.2-9.10.1.871"
                     ElseIf v152.Checked = True Then
                         jarTitle = "minecraftforge-universal-1.5.2-7.8.1.737"
+                    ElseIf v19.Checked = True Then
+                        jarTitle = "forge-1.9-12.16.1.1887-universal"
+                    ElseIf v194.Checked = True Then
+                        jarTitle = "forge-1.9.4-12.17.0.1987-universal"
                     End If
 
                     statuslabel.Text = "Creating start file..."
@@ -290,7 +294,7 @@ Installing:
                         My.Computer.FileSystem.CopyDirectory(pathtext2.Text, path + "\mods")
                     End If
 
-                    statuslabel.Text = "Current Status: Downloading Server Files & Forge Libraries..."
+                    statuslabel.Text = "Current Status: Downloading Server Files && Forge Libraries..."
                     Dim client As WebClient = New WebClient
                     AddHandler client.DownloadProgressChanged, AddressOf client_ProgressChanged
                     AddHandler client.DownloadFileCompleted, AddressOf client_DownloadCompleted
@@ -308,6 +312,10 @@ Installing:
                         client.DownloadFileAsync(New Uri("http://files.minecraftforge.net/maven/net/minecraftforge/forge/1.6.2-9.10.1.871/forge-1.6.2-9.10.1.871-installer.jar"), path + "\Forge_Installer.jar")
                     ElseIf v152.Checked = True Then
                         client.DownloadFileAsync(New Uri("http://files.minecraftforge.net/maven/net/minecraftforge/forge/1.5.2-7.8.1.737/forge-1.5.2-7.8.1.737-installer.jar"), path + "\Forge_Installer.jar")
+                    ElseIf v19.Checked = True Then
+                        client.DownloadFileAsync(New Uri("http://files.minecraftforge.net/maven/net/minecraftforge/forge/1.9-12.16.1.1887/forge-1.9-12.16.1.1887-installer-win.exe"), path + "\Forge_Installer.exe")
+                    ElseIf v194.Checked = True Then
+                        client.DownloadFileAsync(New Uri("http://files.minecraftforge.net/maven/net/minecraftforge/forge/1.9.4-12.17.0.1987/forge-1.9.4-12.17.0.1987-installer-win.exe"), path + "\Forge_Installer.exe")
                     Else
                         MsgBox("You have not selected a version, somehow...")
                     End If
