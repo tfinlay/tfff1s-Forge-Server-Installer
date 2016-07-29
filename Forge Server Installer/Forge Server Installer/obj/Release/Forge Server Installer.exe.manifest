@@ -4,7 +4,7 @@
   <description asmv2:iconFile="Chrisl21-Minecraft-Crafting-Table.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="Forge Server Installer" version="1.6.0.0" language="neutral" processorArchitecture="msil" />
+    <assemblyIdentity name="Forge Server Installer" version="1.8.0.0" language="neutral" processorArchitecture="msil" />
     <commandLine file="Forge Server Installer.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Forge Server Installer.exe" size="2836968">
-      <assemblyIdentity name="Forge Server Installer" version="1.6.0.0" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Forge Server Installer.exe" size="2846696">
+      <assemblyIdentity name="Forge Server Installer" version="1.8.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Cd0raoPc8xn6eKiihTtTQd1GYCzbpVIEs4kA8VJH9zk=</dsig:DigestValue>
+        <dsig:DigestValue>TSRtdTOr1TojApuTHls2rVlBc3mcQMCNMQv7sfwUFr4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -63,13 +63,13 @@
       <dsig:DigestValue>sTVl/wCtpaPcGBVvzvUyZgY2HvslxdQu/zWyhlLw32M=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Forge Server Installer.exe.config" size="1391">
+  <file name="Forge Server Installer.exe.config" size="1504">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>ViYohLdPoXnv3a+6q1np1xCrcFtSRpCPpE2el93jVxU=</dsig:DigestValue>
+      <dsig:DigestValue>uQdWsHeMSTvYTz7nJgO9LFacPNcwt4AZlVRhTJkUws8=</dsig:DigestValue>
     </hash>
   </file>
   <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">

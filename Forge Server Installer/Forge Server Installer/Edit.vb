@@ -229,11 +229,8 @@ Installing:
 Read:
                         Dim currentLine = sr.ReadLine()
                         If currentLine.Contains("java -Xms") Then
-                            Dim cut_at As String = " "
-
-                            Dim stringSeparators() As String = {cut_at}
-                            Dim split = currentLine.Split(stringSeparators, 2, StringSplitOptions.RemoveEmptyEntries)
-                            jarTitle = split(3)
+                            Dim split = currentLine.Split(" "c)
+                            jarTitle = split(4)
                         Else
                             GoTo Read
                         End If
