@@ -59,8 +59,7 @@ Installing:
                 motd = message.Text
                 WG = worldgen.Text
                 currentdate = DateTime.Now
-                installdate = "#Server installed: " & currentdate
-                installdate = installdate & " Local Time using Tfff1's Server Installer"
+                installdate = "#Server installed: " + currentdate.ToString() + " Local Time using Tfff1's Server Installer"
                 oplevel = oppermlevel.Value
                 netherq = nether.CheckState
                 flightq = flight.CheckState
@@ -170,7 +169,7 @@ Installing:
                 File.Create(path & "\server.properties").Dispose()
                 sb.AppendLine("#Minecraft server properties")
                 sb.AppendLine(installdate)
-                sb.AppendLine("generator-settings=")
+                sb.AppendLine("generator-settings=" & WG)
                 sb.AppendLine("op-permission-level=" & oplevel)
                 sb.AppendLine("allow-nether=" & netherq)
                 sb.AppendLine("level-name=world")
@@ -178,7 +177,7 @@ Installing:
                 sb.AppendLine("allow-flight=" & flightq)
                 sb.AppendLine("announce-player-achievements=" & pa)
                 sb.AppendLine("server-port=" & portno)
-                sb.AppendLine("level-type=" & WG)
+                sb.AppendLine("level-type=" & levelType.SelectedText.ToString())
                 sb.AppendLine("enable-rcon=False")
                 sb.AppendLine("level-seed=" & worldseed)
                 sb.AppendLine("force-gamemode=" & forcegmq)
@@ -190,7 +189,8 @@ Installing:
                 sb.AppendLine("hardcore=" & hardcoreq)
                 sb.AppendLine("snooper-enabled=" & snooperq)
                 sb.AppendLine("online-mode=" & onlineq)
-                sb.AppendLine("resource-pack=")
+                sb.AppendLine("resource-pack=" & resourcePack.Text.ToString())
+                sb.AppendLine("resource-pack-sha1=" & resourceSHA1.Text.ToString())
                 sb.AppendLine("pvp=" & pvpq)
                 sb.AppendLine("difficulty=" & difficulty)
                 sb.AppendLine("enable-command-block=" & cbq)
@@ -225,12 +225,24 @@ Installing:
                 End If
 
                 If Forge.Checked = True Then
-                    jarTitle = "Forge_Server"
+                    Using sr As StreamReader = New StreamReader(path + "\start.cmd")
+Read:
+                        Dim currentLine = sr.ReadLine()
+                        If currentLine.Contains("java -Xms") Then
+                            Dim cut_at As String = " "
+
+                            Dim stringSeparators() As String = {cut_at}
+                            Dim split = currentLine.Split(stringSeparators, 2, StringSplitOptions.RemoveEmptyEntries)
+                            jarTitle = split(3)
+                        Else
+                            GoTo Read
+                        End If
+                    End Using
                 ElseIf Spigot.Checked = True Then
                     jarTitle = "Spigot_Server"
                 ElseIf Vanilla.Checked = True Then
                     jarTitle = "Vanilla_Server"
-                End If
+            End If
 
                 statuslabel.Text = "Creating start file..."
                 sb3.AppendLine("@echo off")
@@ -239,7 +251,7 @@ Installing:
                 sb3.AppendLine("echo Check out the website: ")
                 sb3.AppendLine("echo http://www.minecraft-mod-installer.weebly.com")
                 sb3.AppendLine("echo starting server...")
-                sb3.AppendLine("java -Xms" + Rammb.Value.ToString + "M -Xmx" + Rammb.Value.ToString + "M -jar " + jarTitle + ".jar")
+                sb3.AppendLine("java -Xms" + Rammb.Value.ToString + "M -Xmx" + Rammb.Value.ToString + "M -jar " + jarTitle)
                 sb3.AppendLine("echo server has either stopped or crashed.")
                 sb3.AppendLine("pause")
 
@@ -264,6 +276,7 @@ Installing:
             End If
             Hide()
             My.Settings.installdirectory = My.Settings.path
+            My.Settings.doneSender = "edit"
             My.Settings.Save()
             done.Show()
             Close()
@@ -365,6 +378,14 @@ Scan:
                 ElseIf currentline.Contains("max-world-size=") Then
                     GoTo FinishedLine
                 ElseIf currentline.Contains("level-type=") Then
+                    ' Find the string in ListBox2.
+                    Dim index As Integer = levelType.FindString(currentline.Remove(0, 11))
+                    ' If the item was not found in ListBox 2 display a message box, otherwise select it in ListBox2.
+                    If index = -1 Then
+                        MessageBox.Show("Item: " + currentline.Remove(0, 11).ToString() + " isn't a valid Level Type.")
+                    Else
+                        levelType.SelectedIndex = index
+                    End If
                     GoTo FinishedLine
                 ElseIf currentline.Contains("enable-rcon=") Then
                     GoTo FinishedLine
@@ -450,8 +471,14 @@ Scan:
                 ElseIf currentline.Contains("motd=") Then
                     message.Text = currentline.Remove(0, 5)
                     GoTo FinishedLine
+                ElseIf currentline.Contains("resource-pack-sha1=") Then
+                    resourceSHA1.Text = currentline.Remove(0, 19)
+                    GoTo FinishedLine
+                ElseIf currentline.Contains("resource-pack=") Then
+                    resourcePack.Text = currentline.Remove(0, 14)
+                    GoTo FinishedLine
                 Else
-                        MsgBox("This line (" + currentline.ToString + ") contains an unrecognised string")
+                    MsgBox("This line (" + currentline.ToString + ") contains an unrecognised string")
                     GoTo FinishedLine
                 End If
 FinishedLine:
@@ -464,5 +491,30 @@ FinishedLine:
 
 FinishedRead:
         MsgBox("Finished Reading from server.properties")
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        port.Value = 25565
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        If (FolderBrowserDialog2.ShowDialog() = DialogResult.OK) Then
+            pathtext2.Text = FolderBrowserDialog2.SelectedPath
+        End If
+    End Sub
+
+    Private Sub levelType_SelectedIndexChanged(sender As Object, e As EventArgs) Handles levelType.SelectedIndexChanged
+        If levelType.SelectedIndex = 4 Then
+            worldgen.Enabled = True
+        Else
+            worldgen.Enabled = False
+            worldgen.Text = ""
+        End If
+    End Sub
+
+    Private Sub IPv4_Click(sender As Object, e As EventArgs) Handles IPv4.Click
+        Dim tmpHostName As String = Dns.GetHostName()
+        Dim myIPaddress = Dns.GetHostByName(tmpHostName).AddressList(0).ToString()
+        iptext.Text = myIPaddress
     End Sub
 End Class

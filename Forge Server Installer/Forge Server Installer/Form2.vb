@@ -181,7 +181,7 @@ Installing:
                     File.Create(path & "\server.properties").Dispose()
                     sb.AppendLine("#Minecraft server properties")
                     sb.AppendLine(installdate)
-                    sb.AppendLine("generator-settings=")
+                    sb.AppendLine("generator-settings=" & WG)
                     sb.AppendLine("op-permission-level=" & oplevel)
                     sb.AppendLine("allow-nether=" & netherq)
                     sb.AppendLine("level-name=world")
@@ -189,7 +189,7 @@ Installing:
                     sb.AppendLine("allow-flight=" & flightq)
                     sb.AppendLine("announce-player-achievements=" & pa)
                     sb.AppendLine("server-port=" & portno)
-                    sb.AppendLine("level-type=" & WG)
+                    sb.AppendLine("level-type=" & levelType.SelectedText.ToString())
                     sb.AppendLine("enable-rcon=False")
                     sb.AppendLine("level-seed=" & worldseed)
                     sb.AppendLine("force-gamemode=" & forcegmq)
@@ -201,7 +201,8 @@ Installing:
                     sb.AppendLine("hardcore=" & hardcoreq)
                     sb.AppendLine("snooper-enabled=" & snooperq)
                     sb.AppendLine("online-mode=" & onlineq)
-                    sb.AppendLine("resource-pack=")
+                    sb.AppendLine("resource-pack=" & resourcePack.Text.ToString())
+                    sb.AppendLine("resource-pack-sha1=" & resourceSHA1.Text.ToString())
                     sb.AppendLine("pvp=" & pvpq)
                     sb.AppendLine("difficulty=" & difficulty)
                     sb.AppendLine("enable-command-block=" & cbq)
@@ -272,6 +273,8 @@ Installing:
                         jarTitle = "forge-1.9-12.16.1.1887-universal"
                     ElseIf v194.Checked = True Then
                         jarTitle = "forge-1.9.4-12.17.0.1987-universal"
+                    ElseIf v1102.Checked = True Then
+                        jarTitle = "forge-1.10.2-12.18.1.2011-universal"
                     End If
 
                     statuslabel.Text = "Creating start file..."
@@ -282,7 +285,7 @@ Installing:
                     sb3.AppendLine("echo http://www.minecraft-mod-installer.weebly.com")
                     sb3.AppendLine("echo starting server...")
                     sb3.AppendLine("java -Xms" + Rammb.Value.ToString + "M -Xmx" + Rammb.Value.ToString + "M -jar " + jarTitle + ".jar")
-                    sb3.AppendLine("echo server has either stopped or crashed.")
+                    sb3.AppendLine("echo Your server has either stopped or crashed.")
                     sb3.AppendLine("pause")
 
                     Using outstart As StreamWriter = New StreamWriter(path + "\start.cmd", True)
@@ -316,6 +319,8 @@ Installing:
                         client.DownloadFileAsync(New Uri("http://files.minecraftforge.net/maven/net/minecraftforge/forge/1.9-12.16.1.1887/forge-1.9-12.16.1.1887-installer-win.exe"), path + "\Forge_Installer.exe")
                     ElseIf v194.Checked = True Then
                         client.DownloadFileAsync(New Uri("http://files.minecraftforge.net/maven/net/minecraftforge/forge/1.9.4-12.17.0.1987/forge-1.9.4-12.17.0.1987-installer-win.exe"), path + "\Forge_Installer.exe")
+                    ElseIf v1102.Checked = True Then
+                        client.DownloadFileAsync(New Uri("http://files.minecraftforge.net/maven/net/minecraftforge/forge/1.10.2-12.18.1.2011/forge-1.10.2-12.18.1.2011-installer-win.exe"), path + "\Forge_Installer.exe")
                     Else
                         MsgBox("You have not selected a version, somehow...")
                     End If
@@ -392,10 +397,9 @@ install:
         Dim myIPaddress = Dns.GetHostByName(tmpHostName).AddressList(0).ToString()
 
         IPv4.Text = "Your Local Network IP is: " + myIPaddress
-
+        levelType.SelectedIndex = 0
         iptext.Text = "Enter your server's ip address"
         WebBrowser1.Navigate("https://account.mojang.com/documents/minecraft_eula")
-        worldgen.Text = "DEFAULT"
         MaxPlayers.Value = "20"
         viewdistance.Value = "10"
         message.Text = "A Minecraft Server"
@@ -422,7 +426,7 @@ install:
         End If
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub Button3_Click(sender As Object, e As EventArgs)
         worldgen.Text = "DEFAULT"
     End Sub
 
@@ -462,6 +466,8 @@ install:
             If File.Exists(path + "\install.bat") Then
                 File.Delete(path + "\install.bat")
             Else
+                My.Settings.doneSender = "forge"
+                My.Settings.Save()
                 Hide()
                 done.Show()
                 Close()
@@ -472,5 +478,20 @@ install:
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
         Process.Start("https://github.com/tfff1OFFICIAL/tfff1s-Forge-Server-Installer/wiki/Local-IP-Address-%28IPv4%29")
 
+    End Sub
+
+    Private Sub IPv4_Click(sender As Object, e As EventArgs) Handles IPv4.Click
+        Dim tmpHostName As String = System.Net.Dns.GetHostName()
+        Dim myIPaddress = Dns.GetHostByName(tmpHostName).AddressList(0).ToString()
+        iptext.Text = myIPaddress
+    End Sub
+
+    Private Sub levelType_SelectedIndexChanged(sender As Object, e As EventArgs) Handles levelType.SelectedIndexChanged
+        If levelType.SelectedIndex = 4 Then
+            worldgen.Enabled = True
+        Else
+            worldgen.Enabled = False
+            worldgen.Text = ""
+        End If
     End Sub
 End Class

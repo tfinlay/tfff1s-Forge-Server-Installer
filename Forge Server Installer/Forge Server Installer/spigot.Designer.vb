@@ -28,6 +28,8 @@ Partial Class spigot
         Me.Survival = New System.Windows.Forms.RadioButton()
         Me.Adventure = New System.Windows.Forms.RadioButton()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.v1102 = New System.Windows.Forms.RadioButton()
+        Me.v194 = New System.Windows.Forms.RadioButton()
         Me.v19 = New System.Windows.Forms.RadioButton()
         Me.v1710 = New System.Windows.Forms.RadioButton()
         Me.v179 = New System.Windows.Forms.RadioButton()
@@ -76,8 +78,6 @@ Partial Class spigot
         Me.animals = New System.Windows.Forms.CheckBox()
         Me.hardcore = New System.Windows.Forms.CheckBox()
         Me.playerachievements = New System.Windows.Forms.CheckBox()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.worldgen = New System.Windows.Forms.TextBox()
         Me.message = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -101,7 +101,13 @@ Partial Class spigot
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.IPv4 = New System.Windows.Forms.Label()
-        Me.v194 = New System.Windows.Forms.RadioButton()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.levelType = New System.Windows.Forms.ComboBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.resourcePack = New System.Windows.Forms.TextBox()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.resourceSHA1 = New System.Windows.Forms.TextBox()
+        Me.Label18 = New System.Windows.Forms.Label()
         Me.GroupBox2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Rammb, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -145,6 +151,7 @@ Partial Class spigot
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.v1102)
         Me.GroupBox2.Controls.Add(Me.v194)
         Me.GroupBox2.Controls.Add(Me.v19)
         Me.GroupBox2.Controls.Add(Me.v1710)
@@ -157,6 +164,28 @@ Partial Class spigot
         Me.GroupBox2.Size = New System.Drawing.Size(569, 71)
         Me.GroupBox2.TabIndex = 110
         Me.GroupBox2.TabStop = False
+        '
+        'v1102
+        '
+        Me.v1102.AutoSize = True
+        Me.v1102.Location = New System.Drawing.Point(155, 31)
+        Me.v1102.Name = "v1102"
+        Me.v1102.Size = New System.Drawing.Size(55, 17)
+        Me.v1102.TabIndex = 126
+        Me.v1102.TabStop = True
+        Me.v1102.Text = "1.10.2"
+        Me.v1102.UseVisualStyleBackColor = True
+        '
+        'v194
+        '
+        Me.v194.AutoSize = True
+        Me.v194.Location = New System.Drawing.Point(214, 31)
+        Me.v194.Name = "v194"
+        Me.v194.Size = New System.Drawing.Size(49, 17)
+        Me.v194.TabIndex = 125
+        Me.v194.TabStop = True
+        Me.v194.Text = "1.9.4"
+        Me.v194.UseVisualStyleBackColor = True
         '
         'v19
         '
@@ -235,7 +264,7 @@ Partial Class spigot
         'Rammb
         '
         Me.Rammb.Increment = New Decimal(New Integer() {1000, 0, 0, 0})
-        Me.Rammb.Location = New System.Drawing.Point(289, 671)
+        Me.Rammb.Location = New System.Drawing.Point(284, 698)
         Me.Rammb.Maximum = New Decimal(New Integer() {16000, 0, 0, 0})
         Me.Rammb.Name = "Rammb"
         Me.Rammb.Size = New System.Drawing.Size(91, 20)
@@ -245,7 +274,7 @@ Partial Class spigot
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(156, 671)
+        Me.Label12.Location = New System.Drawing.Point(151, 698)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(126, 13)
         Me.Label12.TabIndex = 107
@@ -303,7 +332,7 @@ Partial Class spigot
         '
         'seed
         '
-        Me.seed.Location = New System.Drawing.Point(358, 287)
+        Me.seed.Location = New System.Drawing.Point(249, 242)
         Me.seed.Name = "seed"
         Me.seed.Size = New System.Drawing.Size(194, 20)
         Me.seed.TabIndex = 102
@@ -311,7 +340,7 @@ Partial Class spigot
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(228, 602)
+        Me.Label11.Location = New System.Drawing.Point(223, 629)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(140, 13)
         Me.Label11.TabIndex = 104
@@ -323,7 +352,7 @@ Partial Class spigot
         Me.GroupBox1.Controls.Add(Me.Adventure)
         Me.GroupBox1.Controls.Add(Me.Creative)
         Me.GroupBox1.ForeColor = System.Drawing.Color.Black
-        Me.GroupBox1.Location = New System.Drawing.Point(42, 618)
+        Me.GroupBox1.Location = New System.Drawing.Point(37, 645)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(519, 50)
         Me.GroupBox1.TabIndex = 103
@@ -333,7 +362,7 @@ Partial Class spigot
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(411, 271)
+        Me.Label10.Location = New System.Drawing.Point(177, 245)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(66, 13)
         Me.Label10.TabIndex = 101
@@ -363,7 +392,7 @@ Partial Class spigot
         '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(488, 161)
+        Me.Button4.Location = New System.Drawing.Point(488, 149)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(55, 23)
         Me.Button4.TabIndex = 98
@@ -373,7 +402,7 @@ Partial Class spigot
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(353, 165)
+        Me.Label9.Location = New System.Drawing.Point(353, 153)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(29, 13)
         Me.Label9.TabIndex = 97
@@ -381,7 +410,7 @@ Partial Class spigot
         '
         'port
         '
-        Me.port.Location = New System.Drawing.Point(388, 163)
+        Me.port.Location = New System.Drawing.Point(388, 151)
         Me.port.Maximum = New Decimal(New Integer() {65534, 0, 0, 0})
         Me.port.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.port.Name = "port"
@@ -393,7 +422,7 @@ Partial Class spigot
         '
         Me.Easy.AutoSize = True
         Me.Easy.Checked = True
-        Me.Easy.Location = New System.Drawing.Point(178, 571)
+        Me.Easy.Location = New System.Drawing.Point(173, 598)
         Me.Easy.Name = "Easy"
         Me.Easy.Size = New System.Drawing.Size(63, 17)
         Me.Easy.TabIndex = 95
@@ -404,7 +433,7 @@ Partial Class spigot
         'Normal
         '
         Me.Normal.AutoSize = True
-        Me.Normal.Location = New System.Drawing.Point(320, 571)
+        Me.Normal.Location = New System.Drawing.Point(315, 598)
         Me.Normal.Name = "Normal"
         Me.Normal.Size = New System.Drawing.Size(73, 17)
         Me.Normal.TabIndex = 94
@@ -414,7 +443,7 @@ Partial Class spigot
         'Hard
         '
         Me.Hard.AutoSize = True
-        Me.Hard.Location = New System.Drawing.Point(472, 571)
+        Me.Hard.Location = New System.Drawing.Point(467, 598)
         Me.Hard.Name = "Hard"
         Me.Hard.Size = New System.Drawing.Size(63, 17)
         Me.Hard.TabIndex = 93
@@ -424,7 +453,7 @@ Partial Class spigot
         'Peaceful
         '
         Me.Peaceful.AutoSize = True
-        Me.Peaceful.Location = New System.Drawing.Point(43, 571)
+        Me.Peaceful.Location = New System.Drawing.Point(38, 598)
         Me.Peaceful.Name = "Peaceful"
         Me.Peaceful.Size = New System.Drawing.Size(82, 17)
         Me.Peaceful.TabIndex = 92
@@ -434,9 +463,12 @@ Partial Class spigot
         'oppermlevel
         '
         Me.oppermlevel.Location = New System.Drawing.Point(512, 494)
+        Me.oppermlevel.Maximum = New Decimal(New Integer() {4, 0, 0, 0})
+        Me.oppermlevel.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.oppermlevel.Name = "oppermlevel"
         Me.oppermlevel.Size = New System.Drawing.Size(50, 20)
         Me.oppermlevel.TabIndex = 91
+        Me.oppermlevel.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'Label8
         '
@@ -450,7 +482,7 @@ Partial Class spigot
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(273, 549)
+        Me.Label7.Location = New System.Drawing.Point(268, 576)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(47, 13)
         Me.Label7.TabIndex = 89
@@ -459,9 +491,12 @@ Partial Class spigot
         'viewdistance
         '
         Me.viewdistance.Location = New System.Drawing.Point(512, 472)
+        Me.viewdistance.Maximum = New Decimal(New Integer() {32, 0, 0, 0})
+        Me.viewdistance.Minimum = New Decimal(New Integer() {2, 0, 0, 0})
         Me.viewdistance.Name = "viewdistance"
         Me.viewdistance.Size = New System.Drawing.Size(50, 20)
         Me.viewdistance.TabIndex = 88
+        Me.viewdistance.Value = New Decimal(New Integer() {10, 0, 0, 0})
         '
         'Label6
         '
@@ -475,12 +510,11 @@ Partial Class spigot
         'MaxPlayers
         '
         Me.MaxPlayers.Location = New System.Drawing.Point(512, 450)
-        Me.MaxPlayers.Maximum = New Decimal(New Integer() {1569325056, 23283064, 0, 0})
-        Me.MaxPlayers.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.MaxPlayers.Maximum = New Decimal(New Integer() {2147483647, 0, 0, 0})
         Me.MaxPlayers.Name = "MaxPlayers"
         Me.MaxPlayers.Size = New System.Drawing.Size(50, 20)
         Me.MaxPlayers.TabIndex = 86
-        Me.MaxPlayers.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.MaxPlayers.Value = New Decimal(New Integer() {20, 0, 0, 0})
         '
         'Label5
         '
@@ -617,24 +651,6 @@ Partial Class spigot
         Me.playerachievements.Text = "Announce Player Achivements"
         Me.playerachievements.UseVisualStyleBackColor = True
         '
-        'Button3
-        '
-        Me.Button3.Location = New System.Drawing.Point(252, 287)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(55, 23)
-        Me.Button3.TabIndex = 73
-        Me.Button3.Text = "Default"
-        Me.Button3.UseVisualStyleBackColor = True
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(26, 271)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(290, 13)
-        Me.Label4.TabIndex = 72
-        Me.Label4.Text = "World Gen Settings (leave alone if you don't know what it is)"
-        '
         'worldgen
         '
         Me.worldgen.Location = New System.Drawing.Point(52, 287)
@@ -644,7 +660,7 @@ Partial Class spigot
         '
         'message
         '
-        Me.message.Location = New System.Drawing.Point(48, 231)
+        Me.message.Location = New System.Drawing.Point(48, 219)
         Me.message.Name = "message"
         Me.message.Size = New System.Drawing.Size(519, 20)
         Me.message.TabIndex = 70
@@ -652,7 +668,7 @@ Partial Class spigot
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(204, 215)
+        Me.Label3.Location = New System.Drawing.Point(204, 203)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(206, 13)
         Me.Label3.TabIndex = 69
@@ -684,7 +700,7 @@ Partial Class spigot
         '
         'iptext
         '
-        Me.iptext.Location = New System.Drawing.Point(153, 163)
+        Me.iptext.Location = New System.Drawing.Point(153, 151)
         Me.iptext.Name = "iptext"
         Me.iptext.Size = New System.Drawing.Size(194, 20)
         Me.iptext.TabIndex = 66
@@ -693,7 +709,7 @@ Partial Class spigot
         '
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Location = New System.Drawing.Point(230, 147)
+        Me.Label2.Location = New System.Drawing.Point(230, 135)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(52, 13)
         Me.Label2.TabIndex = 65
@@ -722,14 +738,14 @@ Partial Class spigot
         '
         'pathtext
         '
-        Me.pathtext.Location = New System.Drawing.Point(48, 124)
+        Me.pathtext.Location = New System.Drawing.Point(48, 112)
         Me.pathtext.Name = "pathtext"
         Me.pathtext.Size = New System.Drawing.Size(438, 20)
         Me.pathtext.TabIndex = 62
         '
         'browsebutton
         '
-        Me.browsebutton.Location = New System.Drawing.Point(492, 122)
+        Me.browsebutton.Location = New System.Drawing.Point(492, 110)
         Me.browsebutton.Name = "browsebutton"
         Me.browsebutton.Size = New System.Drawing.Size(75, 23)
         Me.browsebutton.TabIndex = 61
@@ -837,7 +853,7 @@ Partial Class spigot
         '
         'Button6
         '
-        Me.Button6.Location = New System.Drawing.Point(381, 189)
+        Me.Button6.Location = New System.Drawing.Point(381, 177)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(111, 23)
         Me.Button6.TabIndex = 123
@@ -847,28 +863,84 @@ Partial Class spigot
         'IPv4
         '
         Me.IPv4.AutoSize = True
-        Me.IPv4.Location = New System.Drawing.Point(164, 194)
+        Me.IPv4.Location = New System.Drawing.Point(164, 182)
         Me.IPv4.Name = "IPv4"
         Me.IPv4.Size = New System.Drawing.Size(211, 13)
         Me.IPv4.TabIndex = 122
         Me.IPv4.Text = "Your Local Network IP is: 192.192.192.192"
         '
-        'v194
+        'Label16
         '
-        Me.v194.AutoSize = True
-        Me.v194.Location = New System.Drawing.Point(214, 31)
-        Me.v194.Name = "v194"
-        Me.v194.Size = New System.Drawing.Size(49, 17)
-        Me.v194.TabIndex = 125
-        Me.v194.TabStop = True
-        Me.v194.Text = "1.9.4"
-        Me.v194.UseVisualStyleBackColor = True
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(356, 267)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(65, 13)
+        Me.Label16.TabIndex = 192
+        Me.Label16.Text = "World Type:"
+        '
+        'levelType
+        '
+        Me.levelType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.levelType.FormattingEnabled = True
+        Me.levelType.Items.AddRange(New Object() {"DEFAULT", "FLAT", "LARGEBIOMES", "AMPLIFIED", "CUSTOMIZED"})
+        Me.levelType.Location = New System.Drawing.Point(356, 286)
+        Me.levelType.Name = "levelType"
+        Me.levelType.Size = New System.Drawing.Size(172, 21)
+        Me.levelType.TabIndex = 191
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(26, 271)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(310, 13)
+        Me.Label4.TabIndex = 193
+        Me.Label4.Text = "World Gen Settings (For mods or customised Generator Settings)"
+        '
+        'resourcePack
+        '
+        Me.resourcePack.Location = New System.Drawing.Point(511, 538)
+        Me.resourcePack.Name = "resourcePack"
+        Me.resourcePack.Size = New System.Drawing.Size(50, 20)
+        Me.resourcePack.TabIndex = 200
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(427, 541)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(84, 13)
+        Me.Label17.TabIndex = 199
+        Me.Label17.Text = "Resource Pack:"
+        '
+        'resourceSHA1
+        '
+        Me.resourceSHA1.Location = New System.Drawing.Point(512, 564)
+        Me.resourceSHA1.Name = "resourceSHA1"
+        Me.resourceSHA1.Size = New System.Drawing.Size(50, 20)
+        Me.resourceSHA1.TabIndex = 198
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(396, 567)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(115, 13)
+        Me.Label18.TabIndex = 197
+        Me.Label18.Text = "Resource Pack SHA1:"
         '
         'spigot
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1256, 758)
+        Me.Controls.Add(Me.resourcePack)
+        Me.Controls.Add(Me.Label17)
+        Me.Controls.Add(Me.resourceSHA1)
+        Me.Controls.Add(Me.Label18)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.Label16)
+        Me.Controls.Add(Me.levelType)
         Me.Controls.Add(Me.Button6)
         Me.Controls.Add(Me.IPv4)
         Me.Controls.Add(Me.Button5)
@@ -919,8 +991,6 @@ Partial Class spigot
         Me.Controls.Add(Me.animals)
         Me.Controls.Add(Me.hardcore)
         Me.Controls.Add(Me.playerachievements)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.worldgen)
         Me.Controls.Add(Me.message)
         Me.Controls.Add(Me.Label3)
@@ -1000,8 +1070,6 @@ Partial Class spigot
     Friend WithEvents animals As CheckBox
     Friend WithEvents hardcore As CheckBox
     Friend WithEvents playerachievements As CheckBox
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Label4 As Label
     Friend WithEvents worldgen As TextBox
     Friend WithEvents message As TextBox
     Friend WithEvents Label3 As Label
@@ -1030,4 +1098,12 @@ Partial Class spigot
     Friend WithEvents IPv4 As Label
     Friend WithEvents v19 As RadioButton
     Friend WithEvents v194 As RadioButton
+    Friend WithEvents v1102 As RadioButton
+    Friend WithEvents Label16 As Label
+    Friend WithEvents levelType As ComboBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents resourcePack As TextBox
+    Friend WithEvents Label17 As Label
+    Friend WithEvents resourceSHA1 As TextBox
+    Friend WithEvents Label18 As Label
 End Class

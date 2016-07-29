@@ -184,7 +184,7 @@ Installing:
                     File.Create(path & "\server.properties").Dispose()
                     sb.AppendLine("#Minecraft server properties")
                     sb.AppendLine(installdate)
-                    sb.AppendLine("generator-settings=")
+                    sb.AppendLine("generator-settings=" & WG)
                     sb.AppendLine("op-permission-level=" & oplevel)
                     sb.AppendLine("allow-nether=" & netherq)
                     sb.AppendLine("level-name=world")
@@ -192,7 +192,7 @@ Installing:
                     sb.AppendLine("allow-flight=" & flightq)
                     sb.AppendLine("announce-player-achievements=" & pa)
                     sb.AppendLine("server-port=" & portno)
-                    sb.AppendLine("level-type=" & WG)
+                    sb.AppendLine("level-type=" & levelType.SelectedText.ToString())
                     sb.AppendLine("enable-rcon=False")
                     sb.AppendLine("level-seed=" & worldseed)
                     sb.AppendLine("force-gamemode=" & forcegmq)
@@ -204,7 +204,8 @@ Installing:
                     sb.AppendLine("hardcore=" & hardcoreq)
                     sb.AppendLine("snooper-enabled=" & snooperq)
                     sb.AppendLine("online-mode=" & onlineq)
-                    sb.AppendLine("resource-pack=")
+                    sb.AppendLine("resource-pack=" & resourcePack.Text.ToString())
+                    sb.AppendLine("resource-pack-sha1=" & resourceSHA1.Text.ToString())
                     sb.AppendLine("pvp=" & pvpq)
                     sb.AppendLine("difficulty=" & difficulty)
                     sb.AppendLine("enable-command-block=" & cbq)
@@ -275,6 +276,8 @@ Installing:
                         client.DownloadFileAsync(New Uri("https://ci.mcadmin.net/job/Spigot/46/artifact/spigot-1.9.jar"), path + "\spigot_server.jar")
                     ElseIf v194.Checked = True Then
                         client.DownloadFileAsync(New Uri("https://ci.mcadmin.net/job/Spigot/68/artifact/spigot-1.9.4.jar"), path + "\spigot_server.jar")
+                    ElseIf v1102.Checked = True Then
+                        client.DownloadFileAsync(New Uri("https://ci.mcadmin.net/job/Spigot/lastSuccessfulBuild/artifact/spigot-1.10.2.jar"), path + "\spigot_server.jar")
                     End If
 
 
@@ -305,6 +308,8 @@ Installing:
         If worldedit.Checked = True Then
             Call worldEditInstall()
         End If
+        My.Settings.doneSender = "spigot"
+        My.Settings.Save()
         Me.Hide()
         done.Show()
         Me.Close()
@@ -326,6 +331,8 @@ Installing:
         ElseIf v19.Checked = True Then
 
         ElseIf v194.Checked = True Then
+
+        ElseIf v1102.Checked = True Then
 
         End If
 
@@ -351,9 +358,9 @@ Installing:
 
         IPv4.Text = "Your Local Network IP is: " + myIPaddress
 
+        levelType.SelectedIndex = 0
         iptext.Text = "Enter your server's ip address"
         WebBrowser1.Navigate("https://account.mojang.com/documents/minecraft_eula")
-        worldgen.Text = "DEFAULT"
         MaxPlayers.Value = "20"
         viewdistance.Value = "10"
         message.Text = "A Minecraft Server"
@@ -380,7 +387,7 @@ Installing:
         End If
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub Button3_Click(sender As Object, e As EventArgs)
         worldgen.Text = "DEFAULT"
     End Sub
 
@@ -410,7 +417,7 @@ Installing:
     End Sub
 
     Private Sub Timer1_Tick_1(sender As Object, e As EventArgs) Handles Timer1.Tick
-        If v19.Checked = True Or v194.Checked = True Then
+        If v19.Checked = True Or v194.Checked = True Or v1102.Checked = True Then
             worldedit.Enabled = False
         Else
             worldedit.Enabled = True
@@ -431,5 +438,14 @@ Installing:
         Dim tmpHostName As String = System.Net.Dns.GetHostName()
         Dim myIPaddress = System.Net.Dns.GetHostByName(tmpHostName).AddressList(0).ToString()
         iptext.Text = myIPaddress
+    End Sub
+
+    Private Sub levelType_SelectedIndexChanged(sender As Object, e As EventArgs) Handles levelType.SelectedIndexChanged
+        If levelType.SelectedIndex = 4 Then
+            worldgen.Enabled = True
+        Else
+            worldgen.Enabled = False
+            worldgen.Text = ""
+        End If
     End Sub
 End Class

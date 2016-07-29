@@ -67,7 +67,6 @@ Partial Class Edit
         Me.animals = New System.Windows.Forms.CheckBox()
         Me.hardcore = New System.Windows.Forms.CheckBox()
         Me.playerachievements = New System.Windows.Forms.CheckBox()
-        Me.Button3 = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.worldgen = New System.Windows.Forms.TextBox()
         Me.message = New System.Windows.Forms.TextBox()
@@ -85,6 +84,13 @@ Partial Class Edit
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button5 = New System.Windows.Forms.Button()
+        Me.FolderBrowserDialog2 = New System.Windows.Forms.FolderBrowserDialog()
+        Me.levelType = New System.Windows.Forms.ComboBox()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.resourceSHA1 = New System.Windows.Forms.TextBox()
+        Me.resourcePack = New System.Windows.Forms.TextBox()
+        Me.Label16 = New System.Windows.Forms.Label()
         CType(Me.Rammb, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.port, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -97,7 +103,7 @@ Partial Class Edit
         'Button6
         '
         Me.Button6.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.Button6.Location = New System.Drawing.Point(368, 186)
+        Me.Button6.Location = New System.Drawing.Point(368, 172)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(111, 23)
         Me.Button6.TabIndex = 182
@@ -107,7 +113,7 @@ Partial Class Edit
         'IPv4
         '
         Me.IPv4.AutoSize = True
-        Me.IPv4.Location = New System.Drawing.Point(151, 191)
+        Me.IPv4.Location = New System.Drawing.Point(151, 177)
         Me.IPv4.Name = "IPv4"
         Me.IPv4.Size = New System.Drawing.Size(211, 13)
         Me.IPv4.TabIndex = 181
@@ -179,7 +185,7 @@ Partial Class Edit
         '
         'seed
         '
-        Me.seed.Location = New System.Drawing.Point(345, 284)
+        Me.seed.Location = New System.Drawing.Point(225, 253)
         Me.seed.Name = "seed"
         Me.seed.Size = New System.Drawing.Size(194, 20)
         Me.seed.TabIndex = 165
@@ -241,7 +247,7 @@ Partial Class Edit
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(398, 268)
+        Me.Label10.Location = New System.Drawing.Point(278, 237)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(66, 13)
         Me.Label10.TabIndex = 164
@@ -260,7 +266,7 @@ Partial Class Edit
         'nether
         '
         Me.nether.AutoSize = True
-        Me.nether.Location = New System.Drawing.Point(433, 467)
+        Me.nether.Location = New System.Drawing.Point(422, 467)
         Me.nether.Name = "nether"
         Me.nether.Size = New System.Drawing.Size(84, 17)
         Me.nether.TabIndex = 162
@@ -269,7 +275,7 @@ Partial Class Edit
         '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(475, 158)
+        Me.Button4.Location = New System.Drawing.Point(475, 144)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(55, 23)
         Me.Button4.TabIndex = 161
@@ -279,7 +285,7 @@ Partial Class Edit
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(340, 162)
+        Me.Label9.Location = New System.Drawing.Point(340, 148)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(29, 13)
         Me.Label9.TabIndex = 160
@@ -287,7 +293,7 @@ Partial Class Edit
         '
         'port
         '
-        Me.port.Location = New System.Drawing.Point(375, 160)
+        Me.port.Location = New System.Drawing.Point(375, 146)
         Me.port.Maximum = New Decimal(New Integer() {65534, 0, 0, 0})
         Me.port.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.port.Name = "port"
@@ -340,9 +346,12 @@ Partial Class Edit
         'oppermlevel
         '
         Me.oppermlevel.Location = New System.Drawing.Point(504, 442)
+        Me.oppermlevel.Maximum = New Decimal(New Integer() {4, 0, 0, 0})
+        Me.oppermlevel.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.oppermlevel.Name = "oppermlevel"
         Me.oppermlevel.Size = New System.Drawing.Size(50, 20)
         Me.oppermlevel.TabIndex = 154
+        Me.oppermlevel.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'Label8
         '
@@ -381,8 +390,7 @@ Partial Class Edit
         'MaxPlayers
         '
         Me.MaxPlayers.Location = New System.Drawing.Point(504, 398)
-        Me.MaxPlayers.Maximum = New Decimal(New Integer() {1569325056, 23283064, 0, 0})
-        Me.MaxPlayers.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.MaxPlayers.Maximum = New Decimal(New Integer() {2147483647, 0, 0, 0})
         Me.MaxPlayers.Name = "MaxPlayers"
         Me.MaxPlayers.Size = New System.Drawing.Size(50, 20)
         Me.MaxPlayers.TabIndex = 149
@@ -507,34 +515,25 @@ Partial Class Edit
         Me.playerachievements.Text = "Announce Player Achivements"
         Me.playerachievements.UseVisualStyleBackColor = True
         '
-        'Button3
-        '
-        Me.Button3.Location = New System.Drawing.Point(239, 284)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(55, 23)
-        Me.Button3.TabIndex = 136
-        Me.Button3.Text = "Default"
-        Me.Button3.UseVisualStyleBackColor = True
-        '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(13, 268)
+        Me.Label4.Location = New System.Drawing.Point(8, 283)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(290, 13)
+        Me.Label4.Size = New System.Drawing.Size(310, 13)
         Me.Label4.TabIndex = 135
-        Me.Label4.Text = "World Gen Settings (leave alone if you don't know what it is)"
+        Me.Label4.Text = "World Gen Settings (For mods or customised Generator Settings)"
         '
         'worldgen
         '
-        Me.worldgen.Location = New System.Drawing.Point(39, 284)
+        Me.worldgen.Location = New System.Drawing.Point(34, 299)
         Me.worldgen.Name = "worldgen"
         Me.worldgen.Size = New System.Drawing.Size(194, 20)
         Me.worldgen.TabIndex = 134
         '
         'message
         '
-        Me.message.Location = New System.Drawing.Point(35, 228)
+        Me.message.Location = New System.Drawing.Point(35, 214)
         Me.message.Name = "message"
         Me.message.Size = New System.Drawing.Size(519, 20)
         Me.message.TabIndex = 133
@@ -542,7 +541,7 @@ Partial Class Edit
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(191, 212)
+        Me.Label3.Location = New System.Drawing.Point(191, 198)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(206, 13)
         Me.Label3.TabIndex = 132
@@ -577,7 +576,7 @@ Partial Class Edit
         '
         'iptext
         '
-        Me.iptext.Location = New System.Drawing.Point(140, 160)
+        Me.iptext.Location = New System.Drawing.Point(140, 146)
         Me.iptext.Name = "iptext"
         Me.iptext.Size = New System.Drawing.Size(194, 20)
         Me.iptext.TabIndex = 129
@@ -663,7 +662,7 @@ Partial Class Edit
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(198, 126)
+        Me.Label1.Location = New System.Drawing.Point(199, 113)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(88, 13)
         Me.Label1.TabIndex = 185
@@ -671,12 +670,67 @@ Partial Class Edit
         '
         'Button5
         '
-        Me.Button5.Location = New System.Drawing.Point(139, 121)
+        Me.Button5.Location = New System.Drawing.Point(140, 108)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(52, 23)
         Me.Button5.TabIndex = 186
         Me.Button5.Text = "Change"
         Me.Button5.UseVisualStyleBackColor = True
+        '
+        'FolderBrowserDialog2
+        '
+        Me.FolderBrowserDialog2.ShowNewFolderButton = False
+        '
+        'levelType
+        '
+        Me.levelType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.levelType.FormattingEnabled = True
+        Me.levelType.Items.AddRange(New Object() {"DEFAULT", "FLAT", "LARGEBIOMES", "AMPLIFIED", "CUSTOMIZED"})
+        Me.levelType.Location = New System.Drawing.Point(361, 299)
+        Me.levelType.Name = "levelType"
+        Me.levelType.Size = New System.Drawing.Size(172, 21)
+        Me.levelType.TabIndex = 187
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(361, 280)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(65, 13)
+        Me.Label13.TabIndex = 188
+        Me.Label13.Text = "World Type:"
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(388, 503)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(115, 13)
+        Me.Label15.TabIndex = 189
+        Me.Label15.Text = "Resource Pack SHA1:"
+        '
+        'resourceSHA1
+        '
+        Me.resourceSHA1.Location = New System.Drawing.Point(504, 500)
+        Me.resourceSHA1.Name = "resourceSHA1"
+        Me.resourceSHA1.Size = New System.Drawing.Size(50, 20)
+        Me.resourceSHA1.TabIndex = 190
+        '
+        'resourcePack
+        '
+        Me.resourcePack.Location = New System.Drawing.Point(504, 480)
+        Me.resourcePack.Name = "resourcePack"
+        Me.resourcePack.Size = New System.Drawing.Size(50, 20)
+        Me.resourcePack.TabIndex = 192
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(419, 483)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(84, 13)
+        Me.Label16.TabIndex = 191
+        Me.Label16.Text = "Resource Pack:"
         '
         'Edit
         '
@@ -685,6 +739,12 @@ Partial Class Edit
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.Button1
         Me.ClientSize = New System.Drawing.Size(1230, 737)
+        Me.Controls.Add(Me.resourcePack)
+        Me.Controls.Add(Me.Label16)
+        Me.Controls.Add(Me.resourceSHA1)
+        Me.Controls.Add(Me.Label15)
+        Me.Controls.Add(Me.Label13)
+        Me.Controls.Add(Me.levelType)
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.GroupBox2)
@@ -729,7 +789,6 @@ Partial Class Edit
         Me.Controls.Add(Me.animals)
         Me.Controls.Add(Me.hardcore)
         Me.Controls.Add(Me.playerachievements)
-        Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.worldgen)
         Me.Controls.Add(Me.message)
@@ -800,7 +859,6 @@ Partial Class Edit
     Friend WithEvents animals As CheckBox
     Friend WithEvents hardcore As CheckBox
     Friend WithEvents playerachievements As CheckBox
-    Friend WithEvents Button3 As Button
     Friend WithEvents Label4 As Label
     Friend WithEvents worldgen As TextBox
     Friend WithEvents message As TextBox
@@ -818,4 +876,11 @@ Partial Class Edit
     Friend WithEvents Timer1 As Timer
     Friend WithEvents Label1 As Label
     Friend WithEvents Button5 As Button
+    Friend WithEvents FolderBrowserDialog2 As FolderBrowserDialog
+    Friend WithEvents levelType As ComboBox
+    Friend WithEvents Label13 As Label
+    Friend WithEvents Label15 As Label
+    Friend WithEvents resourceSHA1 As TextBox
+    Friend WithEvents resourcePack As TextBox
+    Friend WithEvents Label16 As Label
 End Class
